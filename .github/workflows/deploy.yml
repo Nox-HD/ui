@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./out  # Directory with static files after build
-          server-dir: /public_html  # Root directory on your Hostinger account
+          server-dir: /public_html/ui  # Root directory on your Hostinger account
           exclude: |
             **/.git*
             **/.DS_Store
