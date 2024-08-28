@@ -16,7 +16,7 @@ export default function DocsHome() {
             <div className="rounded-xl">
               <div className="border min-w-full min-h-96 rounded-lg p-1 overflow-hidden">
                 <motion.div whileHover={{ scale: 1.03}}  transition={{ duration: 0.2 }} >
-                  <Image src="/1.png" width={1000} height={1000}></Image>
+                  <Image src="/1.png" width={1000} height={1000} alt="animated-card" />
                 </motion.div>
               </div>
               <div className="p-5"> 
@@ -29,7 +29,7 @@ export default function DocsHome() {
             <div className="rounded-xl">
               <div className="border min-w-full min-h-96 rounded-lg p-1 overflow-hidden">
               <motion.div whileHover={{ scale: 1.03}} transition={{ duration: 0.2 }} >
-                  <Image src="/2.png" width={1000} height={1000}></Image>
+                  <Image src="/2.png" width={1000} height={1000} alt="magnetic icons"/>
                 </motion.div>
               </div>
               <div className="p-5"> 
@@ -38,14 +38,16 @@ export default function DocsHome() {
               </div>
             </div>
           </Link>
-          <Link href='/components/animated-card'>
+          <Link href='/components/macos-dock'>
             <div className="rounded-xl">
-              <div className="bg-gray-800 min-w-full min-h-96 rounded-lg p-5">
-                {/* content */}
+              <div className="border min-w-full min-h-96 rounded-lg p-1 overflow-hidden">
+              <motion.div whileHover={{ scale: 1.03}} transition={{ duration: 0.2 }} >
+                  <Image src="/3.png" width={1000} height={1000} alt="macos dock"/>
+              </motion.div>
               </div>
               <div className="p-5"> 
-                <h1 className="text-3xl font-bold">Animated Card</h1>
-                <p className="pt-2">Scroll through the page and see the image come out of the screen.</p>
+                <h1 className="text-3xl font-bold">macOS Dock</h1>
+                <p className="pt-2">The modern dock displayed in macOS Sierra and above</p>
               </div>
             </div>
           </Link>
