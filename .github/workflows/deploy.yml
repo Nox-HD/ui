@@ -22,10 +22,7 @@ jobs:
         run: npm install
 
       - name: Build the Next.js app
-        run: npm run build
-
-      - name: Export the Next.js app as a static site
-        run: npm run export
+        run: npm run build  # This now includes static export
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -34,8 +31,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}
-          local-dir: ./out  # The directory with your static files after export
-          server-dir: /public_html  # The root directory on your Hostinger account
+          local-dir: ./out  # Directory with static files after build
+          server-dir: /public_html  # Root directory on your Hostinger account
           exclude: |
             **/.git*
             **/.DS_Store
