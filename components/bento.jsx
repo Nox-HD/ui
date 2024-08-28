@@ -1,6 +1,6 @@
 export default function Component() {
     return (
-      <section className="md:grid md: grid-cols-2 gap-6 md:gap-8 lg:gap-10 px-4 md:px-48">
+      <section className="md:grid md: grid-cols-2 gap-6 md:gap-8 lg:gap-10 px-4 md:px-48 animate-in">
         <div className="flex flex-col px-12 py-12 items-center m-5 md:m-0 justify-center gap-4 rounded-lg border bg-background p-6 text-center shadow-sm transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:shadow-lg hover:bg-primary-foreground">
           <BoltIcon className="h-10 w-10 text-primary" />
           <h3 className="text-lg font-semibold">Blazing Fast</h3>

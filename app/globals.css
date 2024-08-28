@@ -8,7 +8,7 @@
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 0 0% 1%;
     --popover-foreground: 210 40% 98%;
     --primary: 210 40% 98%;
     --primary-foreground: 0 0% 3%;
@@ -29,6 +29,9 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --g1: rgb(98, 0, 234);
+    --g2: rgb(236, 64, 122);
+    --g3: rgb(253, 216, 53);
   }
 }
 
@@ -39,4 +42,70 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px; 
+  height: 2px; 
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #292929; 
+  border-radius: 10px;
+  height: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: #222222;
+}
+
+.content::-webkit-scrollbar {
+  width: 8px; 
+  height: 2px; 
+}
+
+.content::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #292929; 
+  border-radius: 10px;
+  height: 10px;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: #222222;
+}
+
+
+
+.codes::-webkit-scrollbar {
+  width: 8px; 
+  height: 8px; 
+}
+
+.codes::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.codes::-webkit-scrollbar-thumb {
+  background-color: #292929; 
+  border-radius: 10px;
+  height: 10px;
+}
+
+.codes::-webkit-scrollbar-thumb:hover {
+  background-color: #222222;
 }

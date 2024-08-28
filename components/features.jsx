@@ -50,7 +50,7 @@ export default function Features() {
             </div>
             <p className="mt-4 text-muted-foreground">
               Elevate your content with our visually stunning cards, each with captivating animations that draw the
-              user's attention.
+              user&apos;s attention.
             </p>
             <div className="mt-6 flex justify-center">
               <Card className="animate-pulse">
@@ -58,7 +58,7 @@ export default function Features() {
                   <CardTitle>Animated Card</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Discover the power of our UI library's cards.</p>
+                  <p>Discover the power of our UI librarys cards.</p>
                 </CardContent>
               </Card>
             </div>
