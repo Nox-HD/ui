@@ -6,20 +6,20 @@ import Image from "next/image"
 export default function Footerfull() {
   return (
     <footer className="bg-black py-12 w-full">
-      <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         <div className="flex flex-col items-start gap-4">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
             <Image src="2.svg" width={150} height={75} />
           </Link>
           <p className="text-muted-foreground">A Open-Source Commitment <br/> by NoxHD.</p>
           <div className="flex gap-4">
-            <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
+            <Link href="https://x.com/noxhdagency" target="_blank" className="text-muted-foreground hover:text-primary" prefetch={false}>
               <TwitterIcon className="h-6 w-6" />
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
               <FacebookIcon className="h-6 w-6" />
             </Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
+            <Link href="https://instagram.com/noxhd.ui" target="_blank" className="text-muted-foreground hover:text-primary" prefetch={false}>
               <InstagramIcon className="h-6 w-6" />
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
@@ -27,38 +27,19 @@ export default function Footerfull() {
             </Link>
           </div>
         </div>
-        <div className="grid gap-2">
-          <h4 className="text-lg font-semibold">Quick Links</h4>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Home
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            About
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Services
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Contact
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Privacy Policy
-          </Link>
-        </div>
-        <div className="grid gap-2">
-          <h4 className="text-lg font-semibold">Resources</h4>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Blog
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Documentation
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            Guides
-          </Link>
-          <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-            API Reference
-          </Link>
+
+        <div className="">
+          <h4 className="text-lg font-semibold pb-2">Resources</h4>
+            <div className="py-4">
+              <Link href="/components/introduction/" className="text-muted-foreground hover:text-primary" prefetch={false}>
+                Documentation
+              </Link>
+            </div>
+            <div>
+              <Link href="/components/" className="text-muted-foreground hover:text-primary" prefetch={false}>
+                Components
+              </Link>
+            </div>
         </div>
         <div className="grid gap-4">
           <h4 className="text-lg font-semibold">Newsletter</h4>
