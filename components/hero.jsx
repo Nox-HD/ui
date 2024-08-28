@@ -32,8 +32,8 @@ export default function Hero() {
             </p>
           </div>
         <div className="flex z-50">
-            <Button className="mx-3"><Link href='/components'>Browse Components</Link></Button>
-            <Button className="mx-3" variant="outline"><Link href='/components/introduction'>Get Started</Link></Button>
+            <Link href='/components'><Button className="mx-3">Browse Components</Button></Link>
+            <Link href='/components/introduction'><Button className="mx-3" variant="outline">Get Started</Button></Link>
         </div>
         <p className='mx-auto max-w-[700px] text-muted-foreground md:text-sm lg:text-sm'>Built with & for</p>
         <div className="flex items-center content-center space-x-7 opacity-75">
