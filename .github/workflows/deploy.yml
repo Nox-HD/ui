@@ -1,0 +1,44 @@
+name: Deploy Next.js to Hostinger
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch if different
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Use the Node.js version that matches your project
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the Next.js app
+        run: npm run build
+
+      - name: Export the Next.js app as a static site
+        run: npm run export
+
+      - name: Deploy to Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }}
+          local-dir: ./out  # The directory with your static files after export
+          server-dir: /public_html  # The root directory on your Hostinger account
+          exclude: |
+            **/.git*
+            **/.DS_Store
+            node_modules/**
+            .github/**
+            deploy.yml
