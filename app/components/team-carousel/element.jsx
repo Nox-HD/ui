@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState, useRef, useEffect } from 'react'
 import classNames from 'classnames'
 
-const TeamCarouselElement = () => {
+const TeamCarouselElement = ({ members }) => {
     const [current, setCurrent] = useState(5)
     const ref = useRef(null)
 
@@ -13,47 +13,7 @@ const TeamCarouselElement = () => {
             "--transition",
             "600ms cubic-bezier(0.22, 0.61, 0.36, 1)"
         )
-    }, [current])
-
-    setTimeout(() => {
-        ref.current?.style.removeProperty(
-            "--transition"
-        )
-    }, 900)
-
-    const members = [{
-        name: "Sam Altman",
-        image: "/teamcarousel/guy1.jpg",
-        tag: "CEO of OpenAI"
-    }, {
-        name: "Madison Beer",
-        image: "/teamcarousel/girl1.jpg",
-        tag: "Female Singer"
-    }, {
-        name: "Gigi Hadid",
-        image: "/teamcarousel/girl2.jpg",
-        tag: "CEO of ACME"
-    }, {
-        name: "Travis Scott",
-        image: "/teamcarousel/guy2.jpg",
-        tag: "CFO of Google"
-    }, {
-        name: "Dua Lipa",
-        image: "/teamcarousel/girl3.jpg",
-        tag: "Female Actor"
-    }, {
-        name: "John Doe",
-        image: "/teamcarousel/guy3.jpg",
-        tag: "Content Creator",
-    }, {
-        name: "Witt Lowry",
-        image: "/teamcarousel/guy4.jpg",
-        tag: "Proffesional Skater"
-    }, {
-        name: "Lana Del Rey",
-        image: "/teamcarousel/girl4.jpg",
-        tag: "Award-Winning Actor"
-    }]
+    }, [current]) 
 
   return (
     <div className='flex h-full w-full items-center justify-center px-10'>
@@ -61,7 +21,7 @@ const TeamCarouselElement = () => {
             <ul ref={ref} className='group flex h-96 overflow-hidden rounded-xl'>
                 {members.map((person, index) => (
                     <li onClick={() => setCurrent(index)} 
-                        className={classNames("w-[15%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]",
+                        className={classNames("cursor-pointer w-[15%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]",
                                               "hover:w-[18%] [&:not([aria-current='true'])]:group-hover:[&:not(:hover)]:w-[12%] ",
                                               "[&[aria-current='true']]:w-[50%] [&[aria-current='true']]:group-hover:w-[40%]",
                                               "before:absolute before:bottom-0 before:top-0 before:left-[-8px] before:right-[-8px]",
@@ -82,8 +42,8 @@ const TeamCarouselElement = () => {
                                    src={person.image}
                             />
                             {current === index ? (<Image className='absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2 
-                                              -translate-y-1/2 object-cover rounded-xl mix-blend-multiply opacity-75 pointer-events-none
-                                              [transition:opacity_600ms_cubic-bezier(0.22,0.61,0.36,1)] '
+                                              -translate-y-1/2 object-cover rounded-xl mix-blend-multiply  pointer-events-none
+                                              [transition:opacity_600ms_cubic-bezier(0.22,0.61,0.36,1)] opacity-75'
                                    width={350}
                                    height={380}
                                    src="/teamcarousel/gradient.png"

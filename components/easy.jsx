@@ -1,17 +1,17 @@
 'use client'
 const Easy = () => {
   return (
-    <div className="grid md:grid-cols-2 my-20 px-36 h-96">
-      <div className="flex flex-col pl-10 justify-center">
+    <div className="grid md:grid-cols-2 my-20 px-10 md:px-36 h-96">
+      <div className="flex flex-col md:pl-10 justify-center">
         <div className="text-4xl font-bold">
           As simple as copy and paste
         </div>
         <div className="mt-5">
-        Copy paste the code into your ui folder and use the <br/> components in your projects. 
+        Copy paste the code into your ui folder and use the components in your projects. 
         It&apos;s that simple, really.
         </div>
       </div>
-      <div className="flex flex-col justify-center content-center  text-center">
+      <div className="flex flex-col justify-center content-center pt-8 md:pt-0 text-center">
       <div className="containers ml-24">
       <button className="btn cmd">
         <svg

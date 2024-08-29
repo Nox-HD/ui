@@ -11,7 +11,7 @@ export default function DocsHome() {
         <article className="prose prose-slate prose-invert prose-lg pb-12">
           <h1>All Components</h1>
         </article>
-        <div className="grid grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10">
           <Link href='/components/animated-card'>
             <div className="rounded-xl">
               <div className="border min-w-full min-h-96 rounded-lg p-1 overflow-hidden">
@@ -48,6 +48,19 @@ export default function DocsHome() {
               <div className="p-5"> 
                 <h1 className="text-3xl font-bold">macOS Dock</h1>
                 <p className="pt-2">The modern dock displayed in macOS Sierra and above</p>
+              </div>
+            </div>
+          </Link>
+          <Link href='/components/team-carousel'>
+            <div className="rounded-xl">
+              <div className="border min-w-full min-h-96 rounded-lg p-1 overflow-hidden">
+              <motion.div whileHover={{ scale: 1.03}} transition={{ duration: 0.2 }} >
+                  <Image src="/4.jpg" width={1000} height={1000} alt="macos dock"/>
+              </motion.div>
+              </div>
+              <div className="p-5"> 
+                <h1 className="text-3xl font-bold">Teams Carousel</h1>
+                <p className="pt-2">Beautiful carousel to mention team members as in Stripe Sessions page</p>
               </div>
             </div>
           </Link>

@@ -23,8 +23,8 @@ const MacDock = () => {
   return (
     <div  ref={ref} className='flex bg-[#393939] bg-opacity-25 border rounded-2xl max-h-[60] p-2 relative'>
       {[
-        'finder', 'firefox', 'tidal', 'vscode', 
-        'xd', 'pycharm', 'netflix', 'spotify'
+        'finder', 'notion', 'vmware', 'vscode', 
+        'pr', 'pycharm', 'firefox', 'spotify'
       ].map((icon) => (
         <div key={icon.id} onMouseMove={mouseMove} className='image'>
           <Image 
