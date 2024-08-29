@@ -58,7 +58,7 @@ const TeamCarouselElement = () => {
   return (
     <div className='flex h-full w-full items-center justify-center px-10'>
         <div className='min-w-full'>
-            <ul ref={ref} className='group flex h-80 overflow-hidden'>
+            <ul ref={ref} className='group flex h-96 overflow-hidden rounded-xl'>
                 {members.map((person, index) => (
                     <li onClick={() => setCurrent(index)} 
                         className={classNames("w-[15%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]",
@@ -72,19 +72,20 @@ const TeamCarouselElement = () => {
                         key={person.name}
                     >
                         <div className='overflow-hidden h-full w-full relative rounded-xl'>
-                            <Image className={classNames("absolute max-w-none w-[288px] h-[320px] left-1/2 top-1/2 -translate-x-1/2",
+                            <Image className={classNames("absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2",
                                               "-translate-y-1/2 object-cover rounded-xl [transition:filter_600ms_cubic-bezier(0.22,0.61,0.36,1)]",
-                                              current === index ? "" : "grayscale"
+                                              current === index ? "" : "grayscale",
+                                              ""
                                             )} 
-                                   width={288}
-                                   height={320}
+                                    width={350}
+                                    height={380}
                                    src={person.image}
                             />
-                            {current === index ? (<Image className='absolute max-w-none w-[288px] h-[320px] left-1/2 top-1/2 -translate-x-1/2 
+                            {current === index ? (<Image className='absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2 
                                               -translate-y-1/2 object-cover rounded-xl mix-blend-multiply opacity-75 pointer-events-none
-                                              [transition:opacity_600ms_cubic-bezier(0.22,0.61,0.36,1)]'
-                                   width={288}
-                                   height={320}
+                                              [transition:opacity_600ms_cubic-bezier(0.22,0.61,0.36,1)] '
+                                   width={350}
+                                   height={380}
                                    src="/teamcarousel/gradient.png"
                             />) : null
                             }
