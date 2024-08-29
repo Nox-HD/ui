@@ -17,6 +17,7 @@
     "@radix-ui/react-tabs": "^1.1.0",
     "@shadcn/ui": "^0.0.4",
     "class-variance-authority": "^0.7.0",
+    "classnames": "^2.5.1",
     "clipboard": "^2.0.11",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.28",
