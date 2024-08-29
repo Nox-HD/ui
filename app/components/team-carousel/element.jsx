@@ -5,7 +5,7 @@ import { useState, useRef, useEffect } from 'react'
 import classNames from 'classnames'
 
 const TeamCarouselElement = () => {
-    const [current, setCurrent] = useState(4)
+    const [current, setCurrent] = useState(5)
     const ref = useRef(null)
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const TeamCarouselElement = () => {
     }, {
         name: "John Doe",
         image: "/teamcarousel/guy3.jpg",
-        tag: "Content Creator"
+        tag: "Content Creator",
     }, {
         name: "Witt Lowry",
         image: "/teamcarousel/guy4.jpg",
