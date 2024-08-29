@@ -28,8 +28,8 @@ const TeamCarouselElement = () => {
         name: "Witt Lowry",
         image: "/teamcarousel/guy4.jpg",
     }, {
-        name: "Witt Lowry",
-        image: "/teamcarousel/guy4.jpg",
+        name: "Lana Rey",
+        image: "/teamcarousel/girl4.jpg",
     }]
 
   return (
