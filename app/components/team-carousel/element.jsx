@@ -95,7 +95,7 @@ const TeamCarouselElement = () => {
                                         )}
                         >
                             {person.name.split(" ").map((word, index) => {
-                                return (<span className={classNames(index === 1 ? 'font-bold' : '')}>{word}{' '}</span>)
+                                return (<span key={person.name} className={classNames(index === 1 ? 'font-bold' : '')}>{word}{' '}</span>)
                             })}
                         </div>
                         <div className={classNames(
