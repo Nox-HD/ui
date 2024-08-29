@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={GeistSans.className}>
         <Header />
         {children}
-        </body>
+      </body>
     </html>
   );
 }
