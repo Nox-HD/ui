@@ -20,9 +20,6 @@ const Sidebar = () => {
         <Link href='/components/install-tailwind' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Install Tailwind CSS
         </Link>
-        <Link href='/components/install-shadcn' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Install ShadCN
-        </Link>
         <Link href='/components' className='-ml-2 pb-1 pt-2 font-bold'>
           All Components
         </Link>
