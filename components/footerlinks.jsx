@@ -5,31 +5,31 @@ import Image from "next/image"
 
 export default function Footerfull() {
   return (
-    <footer className="bg-black py-12 w-full">
-      <div className="container max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <footer className="w-full py-12 bg-black">
+      <div className="container grid grid-cols-1 gap-8 max-w-7xl sm:grid-cols-2 md:grid-cols-3">
         <div className="flex flex-col items-start gap-4">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
             <Image src="2.svg" width={150} height={75} />
           </Link>
-          <p className="text-muted-foreground">A Open-Source Commitment <br/> by NoxHD.</p>
+          <p className="text-muted-foreground">A Open-Source Commitment<br/> by NoxHD.</p>
           <div className="flex gap-4">
             <Link href="https://x.com/noxhdagency" target="_blank" className="text-muted-foreground hover:text-primary" prefetch={false}>
-              <TwitterIcon className="h-6 w-6" />
+              <TwitterIcon className="w-6 h-6" />
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-              <FacebookIcon className="h-6 w-6" />
+              <FacebookIcon className="w-6 h-6" />
             </Link>
             <Link href="https://instagram.com/noxhd.ui" target="_blank" className="text-muted-foreground hover:text-primary" prefetch={false}>
-              <InstagramIcon className="h-6 w-6" />
+              <InstagramIcon className="w-6 h-6" />
             </Link>
             <Link href="#" className="text-muted-foreground hover:text-primary" prefetch={false}>
-              <LinkedinIcon className="h-6 w-6" />
+              <LinkedinIcon className="w-6 h-6" />
             </Link>
           </div>
         </div>
 
         <div className="">
-          <h4 className="text-lg font-semibold pb-2">Resources</h4>
+          <h4 className="pb-2 text-lg font-semibold">Resources</h4>
             <div className="py-4">
               <Link href="/components/introduction/" className="text-muted-foreground hover:text-primary" prefetch={false}>
                 Documentation
@@ -52,7 +52,7 @@ export default function Footerfull() {
           </form>
         </div>
       </div>
-      <div className="container max-w-7xl mt-8 text-xs text-muted-foreground">
+      <div className="container mt-8 text-xs max-w-7xl text-muted-foreground">
         <p>&copy; 2024 NoxHD Inc. All rights reserved.</p>
       </div>
     </footer>
