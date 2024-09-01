@@ -39,7 +39,7 @@ const TeamCarouselElement = ({ members }) => {
                                             )} 
                                     width={350}
                                     height={380}
-                                   src={person.image}
+                                    src={person.image}
                             />
                             {current === index ? (<Image className='absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2 
                                               -translate-y-1/2 object-cover rounded-xl mix-blend-multiply  pointer-events-none
