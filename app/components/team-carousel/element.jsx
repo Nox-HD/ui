@@ -16,9 +16,9 @@ const TeamCarouselElement = ({ members }) => {
     }, [current]) 
 
   return (
-    <div className='flex h-full w-full items-center justify-center px-10'>
+    <div className='flex items-center justify-center w-full h-full px-10'>
         <div className='min-w-full'>
-            <ul ref={ref} className='group flex h-96 overflow-hidden rounded-xl'>
+            <ul ref={ref} className='flex overflow-hidden group h-96 rounded-xl'>
                 {members.map((person, index) => (
                     <li onClick={() => setCurrent(index)} 
                         className={classNames("cursor-pointer w-[15%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]",
@@ -31,7 +31,7 @@ const TeamCarouselElement = ({ members }) => {
                         aria-current={current === index} 
                         key={person.name}
                     >
-                        <div className='overflow-hidden h-full w-full relative rounded-xl'>
+                        <div className='relative w-full h-full overflow-hidden rounded-xl'>
                             <Image className={classNames("absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2",
                                               "-translate-y-1/2 object-cover rounded-xl [transition:filter_600ms_cubic-bezier(0.22,0.61,0.36,1)]",
                                               current === index ? "" : "grayscale",

@@ -4,14 +4,14 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <div className='h-screen'>
-      <div className='pl-24 py-24 flex flex-col space-y-2 overflow-auto overflow-x-hidden'>
-        <div className='-ml-2 pb-1 font-bold'>
+      <div className='flex flex-col py-24 pl-24 space-y-2 overflow-auto overflow-x-hidden'>
+        <div className='pb-1 -ml-2 font-bold'>
           Getting Started
         </div>
         <Link href='/components/introduction' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Introduction
         </Link>
-        <div className='-ml-2 pb-1 pt-2 font-bold'>
+        <div className='pt-2 pb-1 -ml-2 font-bold'>
           Installation
         </div>
         <Link href='/components/install-nextjs' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
@@ -20,7 +20,7 @@ const Sidebar = () => {
         <Link href='/components/install-tailwind' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Install Tailwind CSS
         </Link>
-        <Link href='/components' className='-ml-2 pb-1 pt-2 font-bold'>
+        <Link href='/components' className='pt-2 pb-1 -ml-2 font-bold'>
           All Components
         </Link>
         <Link href='/components/animated-card' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
