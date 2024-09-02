@@ -1,37 +1,52 @@
 'use client'
 import React from 'react'
 import gsap from 'gsap'
+import { useEffect, useRef } from 'react'
 
 const Playground = () => {
-    const handleMouseHover = (e) => {
-        gsap.to(e.currentTarget, {
-            yPercent: -100,
-        });
-    }
-
-    const handleMouseLeave = (e) => {
-        gsap.to(e.currentTarget, {
-            yPercent: 0,
-        });
-    }
+    useEffect(() => {
+        const query = gsap.utils.toArray('li a')
+        query.forEach((link)=> {
+            const tl = gsap.timeline({defaults: {
+                duration: .1,
+            }})
+            tl  
+                .to(link, {
+                    y: -20
+                })
+            tl.pause()
+            
+        })
+    })
 
     return (
-        <div className='container'>
-            <ul className='flex flex-col text-3xl gap-y-7'>
-                {["Homepage", "About Us", "Contact Us", "Privacy Policy"].map((title, index) => (
-                    <div>
-                        <li className='z-0 origin-bottom' 
-                            onMouseEnter={handleMouseHover} 
-                            onMouseLeave={handleMouseLeave} 
-                            key={title}
-                        >
-                            {title}
-                        </li>
-                        
-                        <div className='min-w-full bg-[#a7a7a7] linebreak min-h-[0.5px]'></div>
-                    </div>
-                ))} 
-            </ul>
+        <div className='container text-4xl gap-y-5'>
+            <ul className='flex flex-col gap-y-4'>
+                <li>
+                    <a className='flex flex-col overflow-hidden h-9'>
+                        <p>First Line</p>
+                        <p>First Line</p>
+                    </a>
+                </li>
+                <li>
+                    <a className='flex flex-col overflow-hidden h-9'>
+                        <p>Second Line</p>
+                        <p>Second Line</p>
+                    </a>
+                </li>
+                <li>
+                    <a className='flex flex-col overflow-hidden h-9'>
+                        <p>Third Line</p>
+                        <p>Third Line</p>
+                    </a>
+                </li>
+                <li>
+                    <a className='flex flex-col overflow-hidden h-9'>
+                        <p>Fourth Line</p>
+                        <p>Fourth Line</p>
+                    </a>
+                </li>
+           </ul>
         </div>
     )
 }
