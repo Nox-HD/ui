@@ -6,9 +6,10 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
 
-const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, csscode, jsxcode, jsxlocation, csslocation } ) => {
+const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, csscode, jsxcode, jsxlocation, csslocation, warning } ) => {
   const [Csscodes, setCsscode] = useState(true)
   const [Jsxcodes, setJsxcode] = useState(true)
+  const [Warning, setWarning] = useState(true)
 
   useEffect(() => {
     const checkCodes = () => {
@@ -17,6 +18,9 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
       }
       if (jsxcode === "") {
         setJsxcode(false);
+      }
+      if (warning === "") {
+        setWarning(false)
       }
     };
 
@@ -41,7 +45,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
                       </motion.div>
                 </TabsContent>
                 <TabsContent  className='flex w-full m-auto overflow-hidden' value="code">
-                    <motion.div  initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }}  className='border min-h-[25vw] min-w-full  rounded-xl mt-5 overflow overflow-auto codes'>
+                    <motion.div  initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }}  className='min-w-full mt-5 overflow-auto border rounded-xl overflow codes'>
                         <SyntaxHighlighter className='h-full overflow-auto codes overflow max-h-96' language="javascript" style={atomOneDark} customStyle={{
                             backgroundColor: "#18181b",
                             borderRadius: "10px",
@@ -58,6 +62,29 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
             <h1 className='text-4xl font-bold'>
                 Installation
             </h1>
+            { warning && <div
+              role="alert"
+              className="flex items-center p-2 mt-5 text-yellow-900 transition duration-300 ease-in-out bg-yellow-100 border-l-4 border-yellow-500 rounded-lg dark:bg-yellow-900 dark:border-yellow-700 dark:text-yellow-100 hover:bg-yellow-200 dark:hover:bg-yellow-800 "
+            >
+              <svg
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                fill="none"
+                className="flex-shrink-0 w-5 h-5 mr-2 text-yellow-600"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  stroke-width="2"
+                  stroke-linejoin="round"
+                  stroke-linecap="round"
+                ></path>
+              </svg>
+              <p className="text-xs font-semibold">
+                {warning}
+              </p>
+            </div>
+}
             <hr className="pb-5 solid"></hr>
             <h2 className='pb-3 text-xl font-bold'>
                 Install dependencies

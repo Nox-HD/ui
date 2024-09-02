@@ -35,6 +35,9 @@ const Sidebar = () => {
         <Link href='/components/team-carousel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Team Carousel
         </Link>
+        <Link href='/components/modern-sidebar' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
+          Modern Sidebar
+        </Link>
       </div>
     </div>
   )

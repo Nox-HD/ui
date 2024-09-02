@@ -2,9 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Link from 'next/link'
-import classNames from 'classnames'
 
-const Playground = () => {
+const Playground = ({MenuItems}) => {
     const [hamburger, setHamburger] = useState(true)
 
     useEffect(() => {
@@ -14,13 +13,13 @@ const Playground = () => {
 
         hamburger === true ? (
             gsap.to(background, {
-                x: 0,
+                xPercent: 0,
                 duration: 0.5,
                 ease: "expo.inOut",
                 
             }),
             gsap.to(listItems, {
-                x: 0,
+                xPercent: 0,
                 duration: 0.5,
                 ease: "expo.inOut",
                 onStart: () => { ul.style.setProperty("visibility", "visible") },
@@ -30,13 +29,13 @@ const Playground = () => {
         : 
         (
             gsap.to(background, {
-                x: -1000,
+                xPercent: -100,
                 duration: 0.5,
                 ease: "expo.inOut",
                 delay: .5
             }),
             gsap.to(listItems, {
-                x: -320,
+                xPercent: -150,
                 duration: 0.5,
                 ease: "expo.inOut",
                 onComplete: () => { ul.style.setProperty("visibility", "hidden") },
@@ -63,7 +62,7 @@ const Playground = () => {
                 y: -200,
                 })
                 .to(secondary, {
-                    y: -40,
+                    y: -60,
                 }, "<")
                 .to(line, {
                     x: 20,
@@ -82,7 +81,8 @@ const Playground = () => {
     }, [hamburger])
 
     return (
-        <div className='container relative flex items-center h-full text-4xl text-white'>
+        <div className='container relative flex items-center h-screen text-6xl text-white'>
+            <div className='absolute flex text-black -translate-x-1/2 left-1/2'> Content Goes Here. </div>
             <div className='z-50 sidebar'>
                 <div className='absolute flex cursor-pointer top-10 right-10' onClick={() => { setHamburger(!hamburger)}}>
                 <div className={`p-2 rounded-md 
@@ -94,33 +94,40 @@ const Playground = () => {
                                 y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                     </div>            
                 </div>
-                <ul className='flex flex-col transition-colors duration-50 ul gap-y-6'>
+                <ul className='flex flex-col pl-10 transition-colors duration-50 ul gap-y-16'>
                     <li className='overflow-hidden'>
-                        <Link href="#" className='relative flex flex-col overflow-hidden h-[40px]'>
-                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>Home</p>
-                            <p className='pl-8 secondry'>Home</p>
+                        <Link href={MenuItems[0].link} className='relative flex flex-col overflow-hidden h-[60px]'>
+                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
+                            <p className='pl-8 primary'>{MenuItems[0].name}</p>
+                            <p className='pl-8 secondry'>{MenuItems[0].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href="#" className='relative flex flex-col overflow-hidden h-[40px]'>
-                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>About Us</p>
-                            <p className='pl-8 secondry'>About Us</p>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
+                            <p className='pl-8 primary'>{MenuItems[1].name}</p>
+                            <p className='pl-8 secondry'>{MenuItems[1].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href="#" className='relative flex flex-col overflow-hidden h-[40px]'>
-                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>Contact Us</p>
-                            <p className='pl-8 secondry'>Contact Us</p>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
+                            <p className='pl-8 primary'>{MenuItems[2].name}</p>
+                            <p className='pl-8 secondry'>{MenuItems[2].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href="#" className='relative flex flex-col overflow-hidden h-[40px]'>
-                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>Privacy Policy</p>
-                            <p className='pl-8 secondry'>Privacy Policy</p>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
+                            <p className='pl-8 primary'>{MenuItems[3].name}</p>
+                            <p className='pl-8 secondry'>{MenuItems[3].name}</p>
+                        </Link>
+                    </li>
+                    <li className='overflow-hidden'>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                            <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
+                            <p className='pl-8 primary'>{MenuItems[4].name}</p>
+                            <p className='pl-8 secondry'>{MenuItems[4].name}</p>
                         </Link>
                     </li>
                 </ul>
