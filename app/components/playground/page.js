@@ -1,11 +1,11 @@
 import React from 'react'
-import Template from '../element-template'
+import TemplateWhite from '../element-template-white'
 import Playground from './element'
 
 const TeamCarouselPage = () => {
   return (
     <div>
-        <Template heading={""} 
+        <TemplateWhite heading={""} 
                   subtitle={""} 
                   element={<Playground />} 
                   tabcode={""} 
