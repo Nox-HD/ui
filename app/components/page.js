@@ -77,6 +77,32 @@ export default function DocsHome() {
               </div>
             </div>
           </Link>
+          <Link href='/components/animated-grid-bg'>
+            <div className="rounded-xl">
+              <div className="min-w-full p-1 overflow-hidden border rounded-lg min-h-96">
+              <motion.div whileHover={{ scale: 1.03}} transition={{ duration: 0.2 }} >
+                  <Image style={{scale: 1.01}} src="/6.jpg" width={1000} height={1000} alt="macos dock"/>
+              </motion.div>
+              </div>
+              <div className="p-5"> 
+                <h1 className="text-3xl font-bold">Animated Grid Background</h1>
+                <p className="pt-2">Interactive Grid Design with Seamless Mouse Trailing Animations.</p>
+              </div>
+            </div>
+          </Link>
+          <Link href='/components/staggered-text'>
+            <div className="rounded-xl">
+              <div className="min-w-full p-1 overflow-hidden border rounded-lg min-h-96">
+              <motion.div whileHover={{ scale: 1.03}} transition={{ duration: 0.2 }} >
+                  <Image style={{scale: 1.01}} src="/7.jpg" width={1000} height={1000} alt="macos dock"/>
+              </motion.div>
+              </div>
+              <div className="p-5"> 
+                <h1 className="text-3xl font-bold">Staggered Text</h1>
+                <p className="pt-2">Dynamic Text Animation with Smooth Staggered Effects.</p>
+              </div>
+            </div>
+          </Link>
         </div>
       </motion.div> 
     );
