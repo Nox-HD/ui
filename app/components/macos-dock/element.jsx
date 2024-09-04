@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { useTransform, useMotionValue } from 'framer-motion'
 
-const macOSDock = () => {
+const MacOSDock = () => {
   const ref = useRef(null)
   const x = useMotionValue(0);
   const scaleX = useTransform(x, [0, 1], [-3, 3]);
@@ -80,4 +80,4 @@ const macOSDock = () => {
   )
 }
 
-export default macOSDock
+export default MacOSDock
