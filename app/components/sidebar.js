@@ -23,6 +23,9 @@ const Sidebar = () => {
         <Link href='/components' className='pt-2 pb-1 -ml-2 font-bold'>
           All Components
         </Link>
+        <Link href='/components/animated-grid-bg' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
+          Animated Grid Background
+        </Link>
         <Link href='/components/animated-card' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Animated Card
         </Link>

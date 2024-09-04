@@ -6,7 +6,7 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
 
-const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode, jsxcode, jsxlocation, csslocation } ) => {
+const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode, jsxcode, jsxlocation, csslocation } ) => {
   const [Csscodes, setCsscode] = useState(true)
   const [Jsxcodes, setJsxcode] = useState(true)
 
@@ -59,22 +59,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
                 Installation
             </h1>
             <hr className="solid pb-5"></hr>
-            <h2 className='text-xl font-bold pb-3'>
-                Install dependencies
-            </h2>
-            <div className='relative' >
-                <SyntaxHighlighter className='codes overflow overflow-auto ml-5' language="powershell" style={atomOneDark} customStyle={{
-                                backgroundColor: "#18181b",
-                                borderRadius: "10px",
-                                padding: "15px",
-                                width: "100%",
-                                }}>
-                  {dependencies}
-                </SyntaxHighlighter>
-                <button className='p-2 absolute right-0 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(dependencies)}}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard h-3 w-3"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>
-                </button>
-            </div>
+
             {Csscodes && (<div>
               <h2 className='text-xl font-bold py-3 pt-10'>
               Copy the CSS Markup
@@ -118,4 +103,4 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
   )
 }
 
-export default Template
+export default TemplateX
