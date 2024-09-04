@@ -36,7 +36,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
                     <TabsTrigger value="code">Usage</TabsTrigger>
                 </TabsList>
                 <TabsContent className='flex  m-auto overflow-hidden' value="preview">
-                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] min-w-full rounded-xl mt-5 overflow overflow-auto flex flex-col justify-center items-center content-center p-5'>
+                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] min-w-full rounded-xl mt-5 overflow  flex flex-col justify-center items-center content-center p-5 overflow-hidden'>
                           {element}
                       </motion.div>
                 </TabsContent>

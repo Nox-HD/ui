@@ -6,7 +6,7 @@ import Link from "next/link";
 export function HoverBorderGradientDemo() {
   return (
     <div className="pb-2 flex justify-center text-center rounded-full">
-      <Link href='https://noxhd.com'>
+      <Link href='https://noxhd.com' target="_blank">
         <HoverBorderGradient
           containerClassName="rounded-full"
           as="button"

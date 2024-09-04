@@ -1,13 +1,13 @@
 import React from 'react'
 import Template from '../element-template'
-import MacDock from './element'
+import macOSDock from './element'
 
 const macOSDockDocs = () => {
   return (
     <div>
         <Template heading={"macOS Dock"} 
                   subtitle={"The modern dock displayed in macOS Sierra and above"} 
-                  element={ <MacDock />} 
+                  element={ <macOSDock />} 
                   tabcode={`import React from 'react'
 import MacDock from '@/components/macos-dock/macosdock'
 

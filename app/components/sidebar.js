@@ -38,6 +38,12 @@ const Sidebar = () => {
         <Link href='/components/modern-sidebar' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Modern Sidebar
         </Link>
+        <div className='pt-2 pb-0.5 -ml-2 font-bold text-sm'>
+          Text Effects
+        </div>
+        <Link href='/components/staggered-text' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
+          Staggered Text
+        </Link>
       </div>
     </div>
   )
