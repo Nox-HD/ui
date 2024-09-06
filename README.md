@@ -1,11 +1,8 @@
 # An Open-Source Commitment by NoxHD
 
-<div style="display:flex">
-  <img src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" />
-  <img src="https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white" />
-</div>
+[![forthebadge](https://img.shields.io/badge/Made%20With-NEXT.JS-black?style=for-the-badge)](https://forthebadge.com)
+[![forthebadge](https://img.shields.io/badge/STYLED%20WITH-TAILWIND-21adf5?style=for-the-badge&labelColor=00a7fe)](https://forthebadge.com)
+[![forthebadge](https://img.shields.io/badge/ANIMATED%20WITH-FRAMER%20MOTION-2e7dfd?style=for-the-badge&labelColor=e619bd)](https://forthebadge.com)
 
 ## Our Mission
 At NoxHD, we believe in the power of open-source collaboration to drive innovation. **NoxHD UI** is more than just a collection of components—it's a commitment to enhancing the front-end development experience through community-driven solutions.
