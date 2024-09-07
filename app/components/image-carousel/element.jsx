@@ -65,9 +65,9 @@ const Element = ({ Images }) => {
       <div className='flex justify-center content-center mt-2 gap-x-2 h-0.5 group w-36 m-auto'>
         {Images.map((image, index) => (
           <div aria-current={imgIndex === index}  key={index} onClick={() => setImgIndex(index)} className={classNames(
-            "cursor-pointer w-[20%] relative [transition:width_var(--transition,200ms_ease-in-out)]",
+            "cursor-pointer w-[20%] relative [transition:width_var(--transition,400ms_ease-in-out)]",
             "hover:w-[25%] [&:not([aria-current='true'])]:group-hover:[&:not(:hover)]:w-[20%] ",
-            "[&[aria-current='true']]:w-[40%] [&[aria-current='true']]:group-hover:w-[40%]",
+            "[&[aria-current='true']]:w-[40%] [&[aria-current='true']]:group-hover:w-[40%] origin-center",
             imgIndex === index ? "bg-white" : "bg-stone-500"
           )}></div>
         ))}
