@@ -62,10 +62,13 @@ const Element = ({ Images }) => {
           />
         ))}
       </motion.div>
-      <div className='flex justify-center h-full mt-2 gap-x-2'>
+      <div className='flex justify-center content-center mt-2 gap-x-2 h-0.5 group w-36 m-auto'>
         {Images.map((image, index) => (
-          <div key={index} onClick={() => setImgIndex(index)} className={classNames('cursor-pointer flex h-0.5 w-3 transition-[width] duration-500',
-            imgIndex === index ? "bg-white w-5" : "bg-stone-500 w-2 hover:w-3"
+          <div aria-current={imgIndex === index}  key={index} onClick={() => setImgIndex(index)} className={classNames(
+            "cursor-pointer w-[20%] relative [transition:width_var(--transition,200ms_ease-in-out)]",
+            "hover:w-[25%] [&:not([aria-current='true'])]:group-hover:[&:not(:hover)]:w-[20%] ",
+            "[&[aria-current='true']]:w-[40%] [&[aria-current='true']]:group-hover:w-[40%]",
+            imgIndex === index ? "bg-white" : "bg-stone-500"
           )}></div>
         ))}
       </div>
