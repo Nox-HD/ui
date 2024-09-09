@@ -25,13 +25,25 @@ export default App`}
                   jsxcode={`'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useTransform, useMotionValue } from 'framer-motion'
 
-const MacDock = () => {
+const MacOSDock = () => {
   const ref = useRef(null)
   const x = useMotionValue(0);
   const scaleX = useTransform(x, [0, 1], [-3, 3]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const mouseMove = (e) => {
     if (!ref.current) return;
@@ -40,17 +52,16 @@ const MacDock = () => {
     const cursorWhere = (e.clientX - iconLeft) / iconWidth;
 
     x.set(cursorWhere);
-    ref.current.style.setProperty("--dock-right", \`\${scaleX.get()}px\`\)
-    ref.current.style.setProperty("--dock-left", \`\${scaleX.get() * -1}px\`\)
+    ref.current.style.setProperty("--dock-right", \`\${scaleX.get()}px\`)
+    ref.current.style.setProperty("--dock-left", \`\${scaleX.get() * -1}px\`)
   };
 
   return (
-    <div  ref={ref} className='flex bg-[#393939] bg-opacity-25 border rounded-2xl max-h-[60] p-2 relative'>
-      {[
-        'finder', 'firefox', 'tidal', 'vscode', 
-        'xd', 'pycharm', 'netflix', 'spotify'
+    <div  ref={ref} className='flex bg-[#393939] bg-opacity-25 border rounded-2xl max-h-[60] m-10 p-2 md:m-0 relative'>
+      {isMobile ? ([
+        'finder', 'notion', 'vmware'
       ].map((icon) => (
-        <div onMouseMove={mouseMove} className='image'>
+        <div key={icon.id} onMouseMove={mouseMove} className='image'>
           <Image 
             src={\`/macicons/\${icon}.png\`} 
             layout="fill"
@@ -58,9 +69,22 @@ const MacDock = () => {
             alt='icons'
           />
         </div>
-      ))}
+      ))) : ([
+        'finder', 'notion', 'vmware', 'vscode', 
+        'pr', 'pycharm', 'firefox', 'spotify'
+      ].map((icon) => (
+        <div key={icon.id} onMouseMove={mouseMove} className='image'>
+          <Image 
+            src={\`/macicons/\${icon}.png\`} 
+            layout="fill"
+            sizes="5vw"
+            alt='icons'
+          />
+        </div>
+      ))) }
 
-      <style jsx>{\`\.image {
+      <style jsx>{\`
+        .image {
           position: relative;
           width: 60px;
           height: 60px;
@@ -98,12 +122,12 @@ const MacDock = () => {
           height: 80px;
           margin-top: -30px;
         }
-      \`\}</style>
+      \`}</style>
     </div>
   )
 }
 
-export default MacDock`} 
+export default MacOSDock`} 
                   jsxlocation={"components/macos-dock/macosdock.jsx"} 
                   csslocation={""}
         />

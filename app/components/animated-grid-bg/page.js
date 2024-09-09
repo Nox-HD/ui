@@ -24,7 +24,7 @@ export default App`}
                   jsxcode={`'use client'
 import React, { useEffect, useRef } from 'react'
 
-const AnimatedGridBG = ({word}) => {
+const AnimatedGridBG = () => {
   const containerRef = useRef(null);
   const tileRef = useRef(null);
 
@@ -56,8 +56,8 @@ const AnimatedGridBG = ({word}) => {
           ref={containerRef}
           className="w-full h-full grid gap-0"
         >
-          <div className='z-50 w-max pointer-events-none font-bold text-white text-[5em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-              {word}
+          <div className='z-50 w-max pointer-events-none font-bold text-white md:text-[5em] text-[1.5em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+              The Hero Section
           </div>
           <div
             ref={tileRef}

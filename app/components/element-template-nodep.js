@@ -39,7 +39,7 @@ const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode
                     <TabsTrigger value="code">Usage</TabsTrigger>
                 </TabsList>
                 <TabsContent className='flex  m-auto overflow-hidden' value="preview">
-                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] max-h-[40vw] mt-5 min-w-full rounded-xl overflow  flex flex-col justify-center items-center content-center overflow-hidden'>
+                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] max-h-[100vw] md:max-h-[40vw] mt-5 min-w-full rounded-xl overflow  flex flex-col justify-center items-center content-center overflow-hidden'>
                           {element}
                       </motion.div>
                 </TabsContent>
@@ -77,7 +77,7 @@ const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode
                                   }}>
                   {csscode}
                   </SyntaxHighlighter>
-                  <button className='p-2 absolute right-0 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(csscode)}}>
+                  <button className='p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(csscode)}}>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard h-3 w-3"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>
                   </button>
                 </div>
@@ -96,7 +96,7 @@ const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode
                                   }}>
                   {jsxcode}
                   </SyntaxHighlighter>
-                  <button className='p-2 absolute right-0 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied1(true),   setTimeout(() => {setCopied1(false)}, 1500)}}>
+                  <button className='p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied1(true),   setTimeout(() => {setCopied1(false)}, 1500)}}>
                     {!copied1 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard h-3 w-3"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>}
                     {copied1 && <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
                   </button>

@@ -39,7 +39,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
                     <TabsTrigger value="code">Usage</TabsTrigger>
                 </TabsList>
                 <TabsContent className='flex  m-auto overflow-hidden' value="preview">
-                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] max-h-[40vw] mt-5 min-w-full rounded-xl overflow  flex flex-col justify-center items-center content-center overflow-hidden'>
+                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] mt-5 min-w-full rounded-xl overflow  flex flex-col justify-center items-center content-center overflow-hidden'>
                           {element}
                       </motion.div>
                 </TabsContent>
@@ -66,7 +66,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
                 Install dependencies
             </h2>
             <div className='relative' >
-                <SyntaxHighlighter className='codes overflow overflow-auto ml-5' language="powershell" style={atomOneDark} customStyle={{
+                <SyntaxHighlighter className='codes overflow overflow-auto' language="powershell" style={atomOneDark} customStyle={{
                                 backgroundColor: "#18181b",
                                 borderRadius: "10px",
                                 padding: "15px",
@@ -85,7 +85,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
               </h2>
               <div className='pb-2'>{csslocation}</div>
               <div className='relative'>
-                  <SyntaxHighlighter id="maincode" className='codes overflow overflow-auto max-h-96 ml-5' language="javascript" style={atomOneDark} customStyle={{
+                  <SyntaxHighlighter id="maincode" className='codes overflow overflow-auto max-h-96' language="javascript" style={atomOneDark} customStyle={{
                                   backgroundColor: "#18181b",
                                   borderRadius: "10px",
                                   padding: "15px",
@@ -105,7 +105,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
               </h2>
               <div className='pb-2'>{jsxlocation}</div>
               <div className='relative'>
-                  <SyntaxHighlighter id="maincode" className='codes overflow overflow-auto max-h-96 ml-5' language="javascript" style={atomOneDark} customStyle={{
+                  <SyntaxHighlighter id="maincode" className='codes overflow overflow-auto max-h-96' language="javascript" style={atomOneDark} customStyle={{
                                   backgroundColor: "#18181b",
                                   borderRadius: "10px",
                                   padding: "15px",

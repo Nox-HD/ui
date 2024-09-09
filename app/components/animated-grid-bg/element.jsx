@@ -33,7 +33,7 @@ const Element = () => {
           ref={containerRef}
           className="w-full h-full grid gap-0"
         >
-          <div className='z-50 w-max pointer-events-none font-bold text-white text-[5em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+          <div className='z-50 w-max pointer-events-none font-bold text-white md:text-[5em] text-[1.5em] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
               The Hero Section
           </div>
           <div

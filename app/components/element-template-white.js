@@ -93,7 +93,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
                 Install dependencies
             </h2>
             <div className='relative' >
-                <SyntaxHighlighter className='ml-5 overflow-auto codes overflow' language="powershell" style={atomOneDark} customStyle={{
+                <SyntaxHighlighter className='overflow-auto codes overflow' language="powershell" style={atomOneDark} customStyle={{
                                 backgroundColor: "#18181b",
                                 borderRadius: "10px",
                                 padding: "15px",
@@ -101,7 +101,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
                                 }}>
                   {dependencies}
                 </SyntaxHighlighter>
-                <button className='p-2 absolute right-0 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied3(true),   setTimeout(() => {setCopied3(false)}, 1500)}}>
+                <button className='p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied3(true),   setTimeout(() => {setCopied3(false)}, 1500)}}>
                     {!copied3 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard h-3 w-3"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>}
                     {copied3 && <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
                   </button>
@@ -112,7 +112,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
               </h2>
               <div className='pb-2'>{csslocation}</div>
               <div className='relative'>
-                  <SyntaxHighlighter id="maincode" className='ml-5 overflow-auto codes overflow max-h-96' language="javascript" style={atomOneDark} customStyle={{
+                  <SyntaxHighlighter id="maincode" className='overflow-auto codes overflow max-h-96' language="javascript" style={atomOneDark} customStyle={{
                                   backgroundColor: "#18181b",
                                   borderRadius: "10px",
                                   padding: "15px",
@@ -120,7 +120,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
                                   }}>
                   {csscode}
                   </SyntaxHighlighter>
-                  <button className='p-2 absolute right-0 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied2(true),   setTimeout(() => {setCopied2(false)}, 1500)}}>
+                  <button className='p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied2(true),   setTimeout(() => {setCopied2(false)}, 1500)}}>
                     {!copied2 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard h-3 w-3"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>}
                     {copied2 && <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
                   </button>
@@ -132,7 +132,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
               </h2>
               <div className='pb-2'>{jsxlocation}</div>
               <div className='relative'>
-                  <SyntaxHighlighter id="maincode" className='ml-5 overflow-auto codes overflow max-h-96' language="javascript" style={atomOneDark} customStyle={{
+                  <SyntaxHighlighter id="maincode" className='overflow-auto codes overflow max-h-96' language="javascript" style={atomOneDark} customStyle={{
                                   backgroundColor: "#18181b",
                                   borderRadius: "10px",
                                   padding: "15px",
@@ -140,7 +140,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
                                   }}>
                   {jsxcode}
                   </SyntaxHighlighter>
-                  <button className='p-2 absolute right-0 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied1(true),   setTimeout(() => {setCopied1(false)}, 1500)}}>
+                  <button className='p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm' onClick={async () => {navigator.clipboard.writeText(jsxcode), setCopied1(true),   setTimeout(() => {setCopied1(false)}, 1500)}}>
                     {!copied1 && <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-clipboard h-3 w-3"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path></svg>}
                     {copied1 && <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>}
                   </button>

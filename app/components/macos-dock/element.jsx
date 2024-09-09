@@ -1,13 +1,25 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import { useTransform, useMotionValue } from 'framer-motion'
 
 const MacOSDock = () => {
   const ref = useRef(null)
   const x = useMotionValue(0);
   const scaleX = useTransform(x, [0, 1], [-3, 3]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const mouseMove = (e) => {
     if (!ref.current) return;
@@ -21,8 +33,19 @@ const MacOSDock = () => {
   };
 
   return (
-    <div  ref={ref} className='flex bg-[#393939] bg-opacity-25 border rounded-2xl max-h-[60] p-2 relative'>
-      {[
+    <div  ref={ref} className='flex bg-[#393939] bg-opacity-25 border rounded-2xl max-h-[60] m-10 p-2 md:m-0 relative'>
+      {isMobile ? ([
+        'finder', 'notion', 'vmware'
+      ].map((icon) => (
+        <div key={icon.id} onMouseMove={mouseMove} className='image'>
+          <Image 
+            src={`/macicons/${icon}.png`} 
+            layout="fill"
+            sizes="5vw"
+            alt='icons'
+          />
+        </div>
+      ))) : ([
         'finder', 'notion', 'vmware', 'vscode', 
         'pr', 'pycharm', 'firefox', 'spotify'
       ].map((icon) => (
@@ -34,7 +57,7 @@ const MacOSDock = () => {
             alt='icons'
           />
         </div>
-      ))}
+      ))) }
 
       <style jsx>{`
         .image {

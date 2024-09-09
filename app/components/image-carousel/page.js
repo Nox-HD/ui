@@ -76,7 +76,7 @@ const ImageCarousel = ({ Images }) => {
   }
 
   return (
-    <div className='w-full rounded-xl  border relative p-3 pb-10'>
+    <div className='w-full rounded-xl scale-125 md:scale-100 relative p-3 pb-10'>
       <motion.div
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -114,8 +114,7 @@ const ImageCarousel = ({ Images }) => {
   );
 };
 
-export default ImageCarousel;
-`} 
+export default ImageCarousel;`} 
                   jsxlocation={"components/image-carousel/imagecarousel.jsx"} 
                   csslocation={""}
         />

@@ -81,9 +81,9 @@ const Playground = ({MenuItems}) => {
     }, [hamburger])
 
     return (
-        <div className='container relative flex items-center h-screen text-6xl text-white'>
+        <div className='container relative flex items-center h-screen text-4xl md:text-6xl text-white'>
             <div className='absolute flex text-black -translate-x-1/2 left-1/2'> Content Goes Here. </div>
-            <div className='z-50 sidebar'>
+            <div className='z-10 sidebar'>
                 <div className='absolute flex cursor-pointer top-10 right-10' onClick={() => { setHamburger(!hamburger)}}>
                 <div className={`p-2 rounded-md 
                                 transition-all duration-500 delay-100 ease-in-out
@@ -94,40 +94,40 @@ const Playground = ({MenuItems}) => {
                                 y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                     </div>            
                 </div>
-                <ul className='flex flex-col pl-10 transition-colors duration-50 ul gap-y-16'>
+                <ul className='flex flex-col md:pl-10 transition-colors duration-50 ul gap-y-8 md:gap-y-16'>
                     <li className='overflow-hidden'>
-                        <Link href={MenuItems[0].link} className='relative flex flex-col overflow-hidden h-[60px]'>
+                        <Link href={MenuItems[0].link} className='relative flex flex-col overflow-hidden md:h-[60px]'>
                             <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>{MenuItems[0].name}</p>
-                            <p className='pl-8 secondry'>{MenuItems[0].name}</p>
+                            <p className='md:pl-8 pl-3 primary'>{MenuItems[0].name}</p>
+                            <p className='md:pl-8 pl-3 secondry invisible md:visible absolute md:relative'>{MenuItems[0].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden md:h-[60px]'>
                             <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>{MenuItems[1].name}</p>
-                            <p className='pl-8 secondry'>{MenuItems[1].name}</p>
+                            <p className='md:pl-8 pl-3 primary'>{MenuItems[1].name}</p>
+                            <p className='md:pl-8 pl-3 secondry  invisible md:visible absolute md:relative'>{MenuItems[1].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden md:h-[60px]'>
                             <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>{MenuItems[2].name}</p>
-                            <p className='pl-8 secondry'>{MenuItems[2].name}</p>
+                            <p className='md:pl-8 pl-3 primary'>{MenuItems[2].name}</p>
+                            <p className='md:pl-8 pl-3 secondry  invisible md:visible absolute md:relative'>{MenuItems[2].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden md:h-[60px]'>
                             <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>{MenuItems[3].name}</p>
-                            <p className='pl-8 secondry'>{MenuItems[3].name}</p>
+                            <p className='md:pl-8 pl-3 primary'>{MenuItems[3].name}</p>
+                            <p className='md:pl-8 pl-3 secondry  invisible md:visible absolute md:relative'>{MenuItems[3].name}</p>
                         </Link>
                     </li>
                     <li className='overflow-hidden'>
-                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden h-[60px]'>
+                        <Link href={`${MenuItems[2].link}`} className='relative flex flex-col overflow-hidden md:h-[60px]'>
                             <div className='absolute bg-white opacity-75 min-w-10 top-1/2 -translate-y-1/2 -left-10 min-h-0.5 line'></div>
-                            <p className='pl-8 primary'>{MenuItems[4].name}</p>
-                            <p className='pl-8 secondry'>{MenuItems[4].name}</p>
+                            <p className='md:pl-8 pl-3 primary'>{MenuItems[4].name}</p>
+                            <p className='md:pl-8 pl-3 secondry  invisible md:visible absolute md:relative'>{MenuItems[4].name}</p>
                         </Link>
                     </li>
                 </ul>

@@ -9,21 +9,86 @@ const MagneticIconsPage = () => {
       <Template 
         heading="Magnetic Icons"
         subtitle="Interactive icons with magnetic hover effects."
-        element={ <div className='flex justify-center items-center'>
-          <MagneticIcons> <Image className='m-10 opacity-75' src="/instagram-2016-5.svg" height="60" width="60" alt="Git icon"/> </MagneticIcons> 
-          <MagneticIcons> <Image className='m-10 opacity-75' src="/apple-14.svg" height="50" width="50" alt="LinkedIn icon" /> </MagneticIcons> 
-          <MagneticIcons> <Image className='m-10 opacity-75' src="/tiktok-plain-1.svg" height="50" width="50" alt="Next.js icon" /> </MagneticIcons> 
-          <MagneticIcons> <Image className='m-10 opacity-75 invert' src="/noxhd.svg" height="70" width="70" alt="Next.js icon" /> </MagneticIcons> 
-          </div>
+        element={ <div className="flex justify-center items-center py-20 md:py-0">
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75 md:w-20 md:h-20 w-10 h-10"
+              src="/instagram-2016-5.svg"
+              alt="Instagram icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
+              src="/apple-14.svg"
+              alt="Apple icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
+              src="/tiktok-plain-1.svg"
+              alt="TikTok icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75 invert md:w-20 md:h-20 w-10 h-10"
+              src="/noxhd.svg"
+              alt="Nox icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+        </div>
+        
         }
         tabcode={`import MagneticIcons from './magneticicons'
 
-<div className='flex justify-center items-center'>
-    <MagneticIcons> <Image className='m-10 opacity-75' src="/instagram-2016-5.svg" height="60" width="60" alt="Git icon" /> </MagneticIcons> 
-    <MagneticIcons> <Image className='m-10 opacity-75' src="/apple-14.svg" height="50" width="50" alt="LinkedIn icon" /> </MagneticIcons> 
-    <MagneticIcons> <Image className='m-10 opacity-75' src="/tiktok-plain-1.svg" height="50" width="50" alt="Next.js icon" /> </MagneticIcons> 
-    <MagneticIcons> <Image className='m-10 opacity-75 invert' src="/noxhd.svg" height="70" width="70" alt="Next.js icon" /> </MagneticIcons> 
-</div>`}
+<div className="flex justify-center items-center py-20 md:py-0">
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75 md:w-20 md:h-20 w-10 h-10"
+              src="/instagram-2016-5.svg"
+              alt="Instagram icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
+              src="/apple-14.svg"
+              alt="Apple icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
+              src="/tiktok-plain-1.svg"
+              alt="TikTok icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+          <MagneticIcons>
+            <Image
+              className="m-5 md:m-10 opacity-75 invert md:w-20 md:h-20 w-10 h-10"
+              src="/noxhd.svg"
+              alt="Nox icon"
+              width={30}
+              height={30}
+            />
+          </MagneticIcons>
+        </div>`}
         dependencies={`npm i framer-motion`}
         csscode=""
         jsxcode={`'use client'

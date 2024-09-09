@@ -21,6 +21,7 @@ export default function MagneticIcons({children}) {
     const { x, y } = position;
     return (
         <motion.div
+            className=''
             style={{position: "relative"}}
             ref={ref}
             onMouseMove={handleMouse}
