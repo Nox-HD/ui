@@ -1,0 +1,29 @@
+{
+    "New React Component (AwardsCarousel)": {
+      "prefix": "newcomp",
+      "body": [
+        "import React from 'react';",
+        "",
+        "const AwardsCarousel = () => {",
+        "  return (",
+        "    <div>",
+        "        <TemplateNoCentre heading={\"\"} ",
+        "                  subtitle={\"\"} ",
+        "                  element={\"\"} ",
+        "                  tabcode={``} ",
+        "                  dependencies={\"\"} ",
+        "                  csscode={\"\"} ",
+        "                  jsxcode={``} ",
+        "                  jsxlocation={\"\"} ",
+        "                  csslocation={\"\"}",
+        "        />",
+        "    </div>",
+        "  );",
+        "};",
+        "",
+        "export default AwardsCarousel;"
+      ],
+      "description": "Create a new AwardsCarousel React component"
+    }
+  }
+  

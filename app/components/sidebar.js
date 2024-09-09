@@ -32,6 +32,9 @@ const Sidebar = () => {
         <Link href='/components/magnetic-icons' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Magnetic Icons
         </Link>
+        <Link href='/components/awards-carousel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
+          Awards Carousel
+        </Link>
         <Link href='/components/macos-dock' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           macOS Dock
         </Link>
