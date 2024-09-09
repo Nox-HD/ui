@@ -79,8 +79,8 @@ const TeamCarouselElement = ({ members }) => {
                   onClick={() => setCurrent(index)}
                   className={classNames(
                     'cursor-pointer w-[15%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]',
-                    'hover:w-[18%] [&:not([aria-current=\'true\'])]:group-hover:[&:not(:hover)]:w-[12%]',
-                    '[&[aria-current=\'true\']]:w-[50%] [&[aria-current=\'true\']]:group-hover:w-[40%]',
+                    'hover:w-[18%] [&:not([aria-current=true])]:group-hover:[&:not(:hover)]:w-[12%]',
+                    '[&[aria-current=true]]:w-[50%] [&[aria-current=true]]:group-hover:w-[40%]',
                     'before:absolute before:bottom-0 before:top-0 before:left-[-8px] before:right-[-8px]',
                     'before:rounded-xl'
                   )}
