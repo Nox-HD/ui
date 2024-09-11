@@ -35,6 +35,9 @@ const Sidebar = () => {
         <Link href='/components/awards-carousel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Awards Carousel
         </Link>
+        <Link href='/components/simple-bento-grid' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
+          Simple Bento Grid
+        </Link>
         <Link href='/components/infinite-tunnel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
           Infinite Tunnel
         </Link>

@@ -101,7 +101,7 @@ const Template = ( { heading, subtitle, element, tabcode, dependencies, csscode,
             </div> )}
             {Jsxcodes && (<div>
                 <h2 className='text-xl font-bold py-3 pt-10'>
-              Copy the JSX Source Code
+              Copy The JSX Source Code
               </h2>
               <div className='pb-2'>{jsxlocation}</div>
               <div className='relative'>
