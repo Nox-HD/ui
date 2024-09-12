@@ -39,7 +39,7 @@ const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode
                     <TabsTrigger value="code">Usage</TabsTrigger>
                 </TabsList>
                 <TabsContent className='flex  m-auto overflow-hidden' value="preview">
-                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] max-h-[100vw] md:max-h-[40vw] mt-5 min-w-full rounded-xl overflow  flex flex-col justify-center items-center content-center overflow-hidden'>
+                      <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] max-h-[100vw] md:max-h-[40vw] mt-5 min-w-full rounded-xl overflow overflow-hidden'>
                           {element}
                       </motion.div>
                 </TabsContent>
