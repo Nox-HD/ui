@@ -57,7 +57,7 @@ const SimpleBentoGrid = () => {
           </Link>
         </div>
 
-        <div className="md:col-span-2 md:row-span-3 rounded-2xl overflow-hidden relative bg-[radial-gradient(circle_at_44px_44px,_#00005B_10%,_#000_90%)]">
+        <div className="md:col-span-2 md:row-span-3 rounded-2xl overflow-hidden relative bg-[radial-gradient(circle_at_44px_44px,_#00005B_10%,_#000_120%)]">
           <div className="rounded-full w-14 h-14 overflow-hidden absolute top-7 left-7">
             <div className="bg-[hsla(117,40%,15%,1)] flex justify-center items-center w-full h-full bg-[radial-gradient(circle_at_3%_92%,hsla(161,100%,50%,1)_0%,transparent_67%),radial-gradient(circle_at_46%_94%,hsla(227,100%,50%,1)_0%,transparent_81%),radial-gradient(circle_at_93%_95%,hsla(230,100%,23%,1)_0%,transparent_66%),radial-gradient(circle_at_89%_8%,hsla(243,100%,9%,1)_0%,transparent_150%)] bg-blend-normal" />
             <div className="bg-black rounded-full flex justify-center items-center w-[52px] h-[52px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -89,7 +89,7 @@ const SimpleBentoGrid = () => {
         </div>
 
         <div className="md:col-span-3 overflow-hidden relative md:row-span-3 w-full h-full rounded-2xl">
-          <div className="w-full h-full relative bg-[radial-gradient(circle_at_44px_44px,_#00005B_10%,_#000_90%)]"></div>
+          <div className="w-full h-full relative bg-[radial-gradient(circle_at_44px_44px,_#00005B_10%,_#000_120%)]"></div>
           <div className="bg-[hsla(65,0%,0%,1)] w-full h-full bg-[radial-gradient(circle_at_24%_86%,hsla(13,0%,0%,1)_2%,transparent_83%),radial-gradient(circle_at_11%_94%,hsla(43,0%,0%,1)_16%,transparent_51%),radial-gradient(circle_at_36%_38%,hsla(81,0%,0%,1)_3%,transparent_59%),radial-gradient(circle_at_2%_-16%,hsla(174,100%,19%,1)_3.45%,transparent_83%)] bg-blend-normal"></div>
           <div className="rounded-full w-14 h-14 overflow-hidden absolute top-7 left-7">
             <div className="bg-[hsla(117,40%,15%,1)] flex justify-center items-center w-full h-full bg-[radial-gradient(circle_at_3%_92%,hsla(161,100%,50%,1)_0%,transparent_67%),radial-gradient(circle_at_46%_94%,hsla(227,100%,50%,1)_0%,transparent_81%),radial-gradient(circle_at_93%_95%,hsla(230,100%,23%,1)_0%,transparent_66%),radial-gradient(circle_at_89%_8%,hsla(243,100%,9%,1)_0%,transparent_150%)] bg-blend-normal" />

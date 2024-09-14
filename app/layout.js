@@ -4,8 +4,8 @@ import { GeistSans } from 'geist/font/sans';
 import { GoogleAnalytics } from '@next/third-parties/google'
 
 export const metadata = {
-  title: "NoxHD UI - UI Library for the Next Generation of Websites",
-  description: "UI Library for the Next Generation of Websites",
+  title: "NoxHD UI - UI Library for Next-Gen Websites",
+  description: "UI Library for Next-Gen Websites",
 };
 
 export default function RootLayout({ children }) {

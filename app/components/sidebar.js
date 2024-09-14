@@ -4,7 +4,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <div className='h-screen'>
-      <div className='flex flex-col py-24 pl-24 space-y-2 overflow-auto overflow-x-hidden'>
+      <div className='flex flex-col py-24 pl-16 space-y-2 overflow-auto overflow-x-hidden'>
         <div className='pb-1 -ml-2 font-bold'>
           Getting Started
         </div>
