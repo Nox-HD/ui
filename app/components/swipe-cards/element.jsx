@@ -12,9 +12,9 @@ const SWIPE_THRESHOLD = 330;
 
 const Element = () => {
   const Images = [
-    "/Images/image1.jpg",
-    "/Images/image2.jpg",
-    "/Images/image3.jpg",
+    "/images/image1.jpg",
+    "/images/image2.jpg",
+    "/images/image3.jpg",
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
 
