@@ -1,70 +1,68 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
 const Sidebar = () => {
+  const sections = [
+    {
+      title: 'Getting Started',
+      links: [
+        { href: '/components/introduction', label: 'Introduction' },
+      ],
+    },
+    {
+      title: 'Installation',
+      links: [
+        { href: '/components/install-nextjs', label: 'Install Next.js' },
+        { href: '/components/install-tailwind', label: 'Install Tailwind CSS' },
+      ],
+    },
+    {
+      title: 'All Components',
+      links: [
+        { href: '/components/animated-grid-bg', label: 'Animated Grid Background' },
+        { href: '/components/animated-card', label: 'Animated Card' },
+        { href: '/components/magnetic-icons', label: 'Magnetic Icons' },
+        { href: '/components/awards-carousel', label: 'Awards Carousel' },
+        { href: '/components/magical-bento-grid', label: 'Magical Bento Grid' },
+        { href: '/components/simple-bento-grid', label: 'Simple Bento Grid' },
+        { href: '/components/infinite-tunnel', label: 'Infinite Tunnel' },
+        { href: '/components/macos-dock', label: 'macOS Dock' },
+        { href: '/components/team-carousel', label: 'Team Carousel' },
+        { href: '/components/modern-sidebar', label: 'Modern Sidebar' },
+        { href: '/components/image-carousel', label: 'Image Carousel' },
+        { href: '/components/swipe-cards', label: 'Swipe Cards' },
+      ].sort((a, b) => a.label.localeCompare(b.label)), // Sort links alphabetically by label
+    },
+    {
+      title: 'Text Effects',
+      links: [
+        { href: '/components/staggered-text', label: 'Staggered Text' },
+      ],
+    },
+  ];
+
   return (
-    <div className='h-screen'>
-      <div className='flex flex-col py-24 pl-16 space-y-2 overflow-auto overflow-x-hidden'>
-        <div className='pb-1 -ml-2 font-bold'>
-          Getting Started
-        </div>
-        <Link href='/components/introduction' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Introduction
-        </Link>
-        <div className='pt-2 pb-1 -ml-2 font-bold'>
-          Installation
-        </div>
-        <Link href='/components/install-nextjs' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Install Next.js
-        </Link>
-        <Link href='/components/install-tailwind' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Install Tailwind CSS
-        </Link>
-        <Link href='/components' className='pt-2 pb-1 -ml-2 font-bold'>
-          All Components
-        </Link>
-        <Link href='/components/animated-grid-bg' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Animated Grid Background
-        </Link>
-        <Link href='/components/animated-card' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Animated Card
-        </Link>
-        <Link href='/components/magnetic-icons' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Magnetic Icons
-        </Link>
-        <Link href='/components/awards-carousel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Awards Carousel
-        </Link>
-        <Link href='/components/magical-bento-grid' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Magical Bento Grid
-        </Link>
-        <Link href='/components/simple-bento-grid' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Simple Bento Grid
-        </Link>
-        <Link href='/components/infinite-tunnel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Infinite Tunnel
-        </Link>
-        <Link href='/components/macos-dock' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          macOS Dock
-        </Link>
-        <Link href='/components/team-carousel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Team Carousel
-        </Link>
-        <Link href='/components/modern-sidebar' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Modern Sidebar
-        </Link>
-        <Link href='/components/image-carousel' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Image Carousel
-        </Link>
-        <div className='pt-2 pb-0.5 -ml-2 font-bold text-sm'>
-          Text Effects
-        </div>
-        <Link href='/components/staggered-text' className='text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3'>
-          Staggered Text
-        </Link>
+    <div className="h-screen">
+      <div className="flex flex-col py-24 pl-16 space-y-2 overflow-auto overflow-x-hidden">
+        {sections.map((section, index) => (
+          <div key={index}>
+            <div className="pb-2 -ml-2 font-bold">{section.title}</div>
+            <div className="flex flex-col"> {/* Removed extra spacing to keep layout as requested */}
+              {section.links.map((link, linkIndex) => (
+                <Link
+                  key={linkIndex}
+                  href={link.href}
+                  className="mb-2 text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3" // Adjusted margin to provide spacing
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;
