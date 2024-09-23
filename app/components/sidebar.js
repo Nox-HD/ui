@@ -32,7 +32,7 @@ const Sidebar = () => {
         { href: '/components/image-carousel', label: 'Image Carousel' },
         { href: '/components/swipe-cards', label: 'Swipe Cards' },
         { href: '/components/image-zoom', label: 'Image Zoom' }, 
-      ].sort((a, b) => a.label.localeCompare(b.label)), // Sort links alphabetically by label
+      ].sort((a, b) => a.label.localeCompare(b.label)),
     },
     {
       title: 'Text Effects',
@@ -49,12 +49,12 @@ const Sidebar = () => {
         {sections.map((section, index) => (
           <div key={index}>
             <div className="pb-2 -ml-2 font-bold">{section.title}</div>
-            <div className="flex flex-col"> {/* Removed extra spacing to keep layout as requested */}
+            <div className="flex flex-col">
               {section.links.map((link, linkIndex) => (
                 <Link
                   key={linkIndex}
                   href={link.href}
-                  className="mb-2 text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3" // Adjusted margin to provide spacing
+                  className="mb-2 text-neutral-400 text-sm hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3"
                 >
                   {link.label}
                 </Link>
