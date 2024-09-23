@@ -49,46 +49,56 @@ const MagneticIconsPage = () => {
         </div>
         
         }
-        tabcode={`import MagneticIcons from './magneticicons'
+        tabcode={`import React from "react";
+import MagneticIcons from "./magneticicons";
 
-<div className="flex justify-center items-center py-20 md:py-0">
-          <MagneticIcons>
-            <Image
-              className="m-5 md:m-10 opacity-75 md:w-20 md:h-20 w-10 h-10"
-              src="/instagram-2016-5.svg"
-              alt="Instagram icon"
-              width={30}
-              height={30}
-            />
-          </MagneticIcons>
-          <MagneticIcons>
-            <Image
-              className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
-              src="/apple-14.svg"
-              alt="Apple icon"
-              width={30}
-              height={30}
-            />
-          </MagneticIcons>
-          <MagneticIcons>
-            <Image
-              className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
-              src="/tiktok-plain-1.svg"
-              alt="TikTok icon"
-              width={30}
-              height={30}
-            />
-          </MagneticIcons>
-          <MagneticIcons>
-            <Image
-              className="m-5 md:m-10 opacity-75 invert md:w-20 md:h-20 w-10 h-10"
-              src="/noxhd.svg"
-              alt="Nox icon"
-              width={30}
-              height={30}
-            />
-          </MagneticIcons>
-        </div>`}
+const App = () => {
+  return (
+    <div>
+      <div className="flex justify-center items-center py-20 md:py-0">
+        <MagneticIcons>
+          <Image
+            className="m-5 md:m-10 opacity-75 md:w-20 md:h-20 w-10 h-10"
+            src="/instagram-2016-5.svg"
+            alt="Instagram icon"
+            width={30}
+            height={30}
+          />
+        </MagneticIcons>
+        <MagneticIcons>
+          <Image
+            className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
+            src="/apple-14.svg"
+            alt="Apple icon"
+            width={30}
+            height={30}
+          />
+        </MagneticIcons>
+        <MagneticIcons>
+          <Image
+            className="m-5 md:m-10 opacity-75  md:w-[4.5rem] md:h-[4.5rem] w-10 h-10"
+            src="/tiktok-plain-1.svg"
+            alt="TikTok icon"
+            width={30}
+            height={30}
+          />
+        </MagneticIcons>
+        <MagneticIcons>
+          <Image
+            className="m-5 md:m-10 opacity-75 invert md:w-20 md:h-20 w-10 h-10"
+            src="/noxhd.svg"
+            alt="Nox icon"
+            width={30}
+            height={30}
+          />
+        </MagneticIcons>
+      </div>
+    </div>
+  );
+};
+
+export default App;
+`}
         dependencies={`npm i framer-motion`}
         csscode=""
         jsxcode={`'use client'

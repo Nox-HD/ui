@@ -49,7 +49,7 @@ const TemplateWhite = ( { heading, subtitle, element, tabcode, dependencies, css
                 </TabsContent>
                 <TabsContent  className='flex w-full m-auto overflow-hidden' value="code">
                     <motion.div  initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }}  className='min-w-full mt-5 overflow-auto border rounded-xl overflow codes'>
-                        <SyntaxHighlighter className='h-full overflow-auto codes overflow max-h-96' language="javascript" style={atomOneDark} customStyle={{
+                        <SyntaxHighlighter className='h-full overflow-auto codes overflow max-h-[30rem]' language="javascript" style={atomOneDark} customStyle={{
                             backgroundColor: "#18181b",
                             borderRadius: "10px",
                             padding: "25px",
