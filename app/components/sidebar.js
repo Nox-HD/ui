@@ -31,6 +31,7 @@ const Sidebar = () => {
         { href: '/components/modern-sidebar', label: 'Modern Sidebar' },
         { href: '/components/image-carousel', label: 'Image Carousel' },
         { href: '/components/swipe-cards', label: 'Swipe Cards' },
+        { href: '/components/image-zoom', label: 'Image Zoom' }, 
       ].sort((a, b) => a.label.localeCompare(b.label)), // Sort links alphabetically by label
     },
     {
