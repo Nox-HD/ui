@@ -13,9 +13,9 @@ export const metadata = {
     siteName: 'NoxHD UI',
     images: [
       {
-        url: 'logo.png',
+        url: 'https://ui.noxhd.com/logo.png',
         width: 800,
-        height: 600,
+        height: 800,
       },
     ],
     locale: 'en_US',
