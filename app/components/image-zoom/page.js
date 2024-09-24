@@ -58,7 +58,7 @@ const TemplateNoCentre = ({
               transition={{ duration: 0.3 }}
               className="previews border min-h-[25vw] md:max-h-[48vw] mt-5 min-w-full rounded-xl overflow-y-auto flex flex-col"
             >
-              <div className="previews" style={{ height: "100vh" }}>
+              <div className="previews lg:h-[100vh]">
                 <ParallaxSection
                 className="previews"
                   outsideImage={"/images/outside.png"}

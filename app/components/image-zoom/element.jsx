@@ -41,7 +41,7 @@ const ParallaxSection = ({ outsideImage, insideImage }) => {
     ).to(
       hero,
       {
-        scale: 1.1,
+        scale: 1.2,
         transformOrigin: "center center",
         ease: "power1.inOut",
       },
@@ -56,17 +56,17 @@ const ParallaxSection = ({ outsideImage, insideImage }) => {
   return (
     <div
       ref={containerRef}
-      className="h-[100vh] overflow-y-auto overflow-x-hidden previews"
+      className="h-[100vw] md:h-[100vh] overflow-y-auto overflow-x-hidden previews aspect-square md:aspect-auto"
     >
-      <div ref={wrapperRef} className="relative w-full z-10">
-        <div className="relative w-full overflow-hidden">
+      <div ref={wrapperRef} className="relative w-full h-full z-10">
+        <div className="relative w-full h-full overflow-hidden">
           <section
             ref={heroRef}
-            className="w-full h-screen bg-center bg-no-repeat bg-cover"
+            className="w-full h-full bg-center bg-no-repeat bg-cover"
             style={{ backgroundImage: `${insideImage}` }}
           ></section>
         </div>
-        <div className="absolute top-0 left-0 right-0 w-full h-screen z-20 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 w-full h-full z-20 overflow-hidden">
           <img
             ref={imageRef}
             src={outsideImage}
