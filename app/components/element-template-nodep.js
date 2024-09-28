@@ -64,7 +64,7 @@ const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode
             <hr className="solid pb-5"></hr>
 
             {Csscodes && (<div>
-              <h2 className='text-xl font-bold py-3 pt-10'>
+              <h2 className='text-xl font-bold py-3 pt-5'>
               Copy the CSS Markup
               </h2>
               <div className='pb-2'>{csslocation}</div>
