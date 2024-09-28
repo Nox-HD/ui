@@ -88,7 +88,7 @@ const TemplateX = ( { heading, subtitle, element, tabcode, dependencies, csscode
               </h2>
               <div className='pb-2'>{jsxlocation}</div>
               <div className='relative'>
-                  <SyntaxHighlighter id="maincode" className='codes overflow overflow-auto max-h-96 ml-5' language="javascript" style={atomOneDark} customStyle={{
+                  <SyntaxHighlighter id="maincode" className='codes overflow overflow-auto max-h-96' language="javascript" style={atomOneDark} customStyle={{
                                   backgroundColor: "#18181b",
                                   borderRadius: "10px",
                                   padding: "15px",

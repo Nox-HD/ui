@@ -1,8 +1,31 @@
-'use client'
-import React, { useEffect, useRef } from 'react';
-import { twMerge } from 'tailwind-merge';
+import React from 'react';
+import GlitchCanvas from './element';
+import TemplateX from '../element-template-nodep';
 
-const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
+const AwardsCarousel = () => {
+  return (
+    <div>
+        <TemplateX heading={"Glitch Image"} 
+                  subtitle={"Dynamic Infinite Glitch Effect on Images"} 
+                  element={<GlitchCanvas maxWidth={900} maxHeight={900} image={"/2.svg"} />} 
+                  tabcode={`import React from 'react';
+import GlitchImage from '@/components/glitch-image/glitchimage';
+
+const App = () => {
+  return (
+    <div>
+      <GlitchCanvas maxWidth={900} maxHeight={900} image={"/logo.svg"} />
+    </div>
+  );
+};
+
+export default App;`} 
+                  dependencies={""} 
+                  csscode={""} 
+                  jsxcode={`'use client'
+import React, { useEffect, useRef } from 'react';
+
+const GlitchImage = ({ maxHeight, maxWidth, image }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -99,8 +122,7 @@ const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
       window.addEventListener('resize', init);
     };
 
-    img.src =
-      '/2.svg';
+    img.src = image
 
     return () => {
       clearInterval(glitchInterval);
@@ -109,10 +131,19 @@ const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
   }, [maxWidth, maxHeight]);
 
   return (
-    <div className="bg-black">
-      <canvas ref={canvasRef} className={twMerge('m-5 mx-auto block')}></canvas>
+    <div className="bg-black w-full h-full flex justify-center items-center">
+      <canvas ref={canvasRef} className='m-5 mx-auto block'></canvas>
     </div>
   );
 };
 
-export default GlitchCanvas;
+export default GlitchImage;
+`} 
+                  jsxlocation={"components/glitch-image/glitchimage.jsx"} 
+                  csslocation={""}
+        />
+    </div>
+  );
+};
+
+export default AwardsCarousel;

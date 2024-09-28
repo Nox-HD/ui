@@ -32,6 +32,7 @@ const Sidebar = () => {
         { href: '/components/image-carousel', label: 'Image Carousel' },
         { href: '/components/swipe-cards', label: 'Swipe Cards' },
         { href: '/components/image-zoom', label: 'Image Zoom' }, 
+        { href: '/components/glitch-image', label: 'Glitch Image' }, 
       ].sort((a, b) => a.label.localeCompare(b.label)),
     },
     {

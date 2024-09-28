@@ -1,8 +1,7 @@
 'use client'
 import React, { useEffect, useRef } from 'react';
-import { twMerge } from 'tailwind-merge';
 
-const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
+const GlitchCanvas = ({ maxHeight, maxWidth, image }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -99,8 +98,7 @@ const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
       window.addEventListener('resize', init);
     };
 
-    img.src =
-      '/2.svg';
+    img.src = image
 
     return () => {
       clearInterval(glitchInterval);
@@ -109,8 +107,8 @@ const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
   }, [maxWidth, maxHeight]);
 
   return (
-    <div className="bg-black">
-      <canvas ref={canvasRef} className={twMerge('m-5 mx-auto block')}></canvas>
+    <div className="bg-black w-full h-full flex justify-center items-center">
+      <canvas ref={canvasRef} className='m-5 mx-auto block'></canvas>
     </div>
   );
 };
