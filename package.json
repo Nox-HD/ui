@@ -1,16 +1,13 @@
 {
   "name": "noxhd-ui",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap"
-  },
-  "bin": {
-    "noxhd-ui": "cli.js"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
