@@ -8,6 +8,7 @@ const Element = () => {
     "/photogallery/image1.jpg",
     "/photogallery/image2.jpg",
     "/photogallery/image3.jpg",
+    "/photogallery/image4.jpg",
     "/photogallery/image5.jpg",
     "/photogallery/image6.jpg",
     "/photogallery/image7.jpg",
@@ -29,12 +30,37 @@ const Element = () => {
 
   return (
     <main>
-      <div>
-        {Images.map((image, index) => (
-            <div key={index}>
+      <div className="flex flex-nowrap items-center">
+        <div className="min-w-[400px] min-h-[200px]"/>
+        {Images.slice(0, 4).map((image, index) => (
+            <div key={index} className="flex-shrink-0">
                 <Image src={image} height={200} width={400} />
             </div>
         ))}
+      </div>
+      <div className="flex flex-nowrap items-center">
+        {Images.slice(5, 8).map((image, index) => (
+          <div key={index} className="flex-shrink-0">
+                <Image src={image} height={200} width={400} />
+            </div>
+        ))}
+        <div className="min-w-[400px] min-h-[200px]"/>
+      </div>
+      <div className="flex flex-nowrap items-center">
+        <div className="min-w-[400px] min-h-[200px]"/>
+        {Images.slice(9, 12).map((image, index) => (
+            <div key={index} className="flex-shrink-0">
+                <Image src={image} height={200} width={400} />
+            </div>
+        ))}
+      </div>
+      <div className="flex flex-nowrap items-center">
+        {Images.slice(13, 16).map((image, index) => (
+          <div key={index} className="flex-shrink-0">
+                <Image src={image} height={200} width={400} />
+            </div>
+        ))}
+        <div className="min-w-[400px] min-h-[200px]"/>
       </div>
     </main>
   );

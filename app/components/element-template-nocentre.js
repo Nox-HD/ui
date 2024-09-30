@@ -39,7 +39,7 @@ const TemplateNoCentre = ( { heading, subtitle, element, tabcode, dependencies, 
                     <TabsTrigger value="code">Usage</TabsTrigger>
                 </TabsList>
                 <TabsContent className='flex  m-auto overflow-hidden' value="preview">
-                    <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border min-h-[25vw] md:max-h-[40vw] mt-5 min-w-full rounded-xl overflow  flex flex-col overflow-hidden'>
+                    <motion.div initial={{ y: 15, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3 }} className='border overflow-y-auto min-h-[25vw] md:max-h-[40vw] mt-5 min-w-full rounded-xl overflow  flex flex-col overflow-hidden'>
                         {element}
                     </motion.div>
                 </TabsContent>
