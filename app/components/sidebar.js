@@ -33,6 +33,7 @@ const Sidebar = () => {
         { href: '/components/swipe-cards', label: 'Swipe Cards' },
         { href: '/components/image-zoom', label: 'Image Zoom' }, 
         { href: '/components/glitch-image', label: 'Glitch Image' }, 
+        { href: '/components/scrollable-photo-gallery', label: 'Scrollable Photo Gallery' }, 
       ].sort((a, b) => a.label.localeCompare(b.label)),
     },
     {
