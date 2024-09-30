@@ -35,7 +35,7 @@ const TeamCarouselElement = ({ members }) => {
         >
           {isMobile
             ? members.map((person, index) => (
-                <div className="rounded-xl overflow-hidden relative" key={index}>
+                <div className=" pointer-events-none rounded-xl overflow-hidden relative" key={index}>
                   <Image
                     className="absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2 
                               -translate-y-1/2 object-cover rounded-xl mix-blend-multiply pointer-events-none
@@ -78,11 +78,12 @@ const TeamCarouselElement = ({ members }) => {
                 <li
                   onClick={() => setCurrent(index)}
                   className={classNames(
-                    'cursor-pointer w-[15%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]',
+                    'cursor-pointer w-[14.765%] p-2 relative [transition:width_var(--transition,200ms_ease-in-out)]',
                     'hover:w-[18%] [&:not([aria-current=true])]:group-hover:[&:not(:hover)]:w-[12%]',
                     '[&[aria-current=true]]:w-[50%] [&[aria-current=true]]:group-hover:w-[40%]',
                     'before:absolute before:bottom-0 before:top-0 before:left-[-8px] before:right-[-8px]',
-                    'before:rounded-xl'
+                    'before:rounded-xl',
+                    current === index ? 'pointer-events-none' : null
                   )}
                   aria-current={current === index}
                   key={index}
@@ -90,7 +91,7 @@ const TeamCarouselElement = ({ members }) => {
                   <div className="relative w-full h-full overflow-hidden rounded-xl">
                     <Image
                       className={classNames(
-                        'absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2',
+                        'absolute pointer-events-none max-w-none w-[24.5rem] h-[380px] left-1/2 top-1/2 -translate-x-1/2',
                         '-translate-y-1/2 object-cover rounded-xl [transition:filter_600ms_cubic-bezier(0.22,0.61,0.36,1)]',
                         current === index ? '' : 'grayscale'
                       )}
@@ -101,7 +102,7 @@ const TeamCarouselElement = ({ members }) => {
                     />
                     {current === index && (
                       <Image
-                        className="absolute max-w-none w-[350px] h-[380px] left-1/2 top-1/2 -translate-x-1/2 
+                        className="absolute max-w-none w-[24.5rem] h-[380px] left-1/2 top-1/2 -translate-x-1/2 
                                   -translate-y-1/2 object-cover rounded-xl mix-blend-multiply pointer-events-none
                                   [transition:opacity_600ms_cubic-bezier(0.22,0.61,0.36,1)] opacity-75"
                         width={350}
