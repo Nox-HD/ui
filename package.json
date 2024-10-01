@@ -37,6 +37,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-element-to-jsx-string": "^15.0.0",
+    "react-frame-component": "^5.2.7",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-pretty-code": "^0.14.0",
     "rehype-stringify": "^10.0.0",

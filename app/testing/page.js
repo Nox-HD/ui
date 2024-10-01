@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-const Element = () => {
+const ScrollablePhotoGallery = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
   
   const Images = [
@@ -40,31 +40,34 @@ const Element = () => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: container,
-      start: "top center",
+      start: "top top",
       end: "bottom bottom",
       markers: true,
-      scroller: container,
-      scrub: true, 
+      scrub: 5,
     }
   });
   useGSAP(() => {
     tl
       .to(".first", {
-        x: "-50%"
+        x: "-50%",
+        ease: "power1.inOut"
       })
       .to(".second", {
-        x: "50%"
+        x: "50%",
+        ease: "power1.inOut"
       })
       .to(".third", {
-        x: "-50%"
+        x: "-50%",
+        ease: "power1.inOut"
       })
       .to(".fourth", {
-        x: "50%"
+        x: "50%",
+        ease: "power1.inOut"
       })
   })
   
   return (
-    <div ref={containerRef} className="container">
+    <div ref={containerRef} className="container overflow-y-auto overflow-x-hidden">
       <div className="w-screen h-[50vh]"/>
       <div className="grid gap-y-6">
         <div className="flex gap-x-6 first flex-nowrap translate-x-[400px] items-center">
@@ -101,4 +104,4 @@ const Element = () => {
   );
 };
 
-export default Element;
+export default ScrollablePhotoGallery;
