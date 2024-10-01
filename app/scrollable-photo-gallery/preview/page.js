@@ -1,26 +1,26 @@
-'use client'
+"use client";
 import React from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Lenis from 'lenis'
+import Lenis from "lenis";
 
 const ScrollablePhotoGallery = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useEffect(() => {
-    const lenis = new Lenis()
+    const lenis = new Lenis();
 
-    lenis.on('scroll', ScrollTrigger.update)
+    lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.ticker.add((time)=>{
-      lenis.raf(time * 1000)
-    })
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
 
-    gsap.ticker.lagSmoothing(0)
-  }, null)
+    gsap.ticker.lagSmoothing(0);
+  }, null);
 
   const Images = [
     "/photogallery/image2.jpg",
@@ -55,78 +55,115 @@ const ScrollablePhotoGallery = () => {
       start: "top top",
       end: "bottom bottom",
       scrub: 1,
-    }
+    },
   });
   useGSAP(() => {
-    tl
-      .to(".first", {
+    tl.to(
+      ".first",
+      {
         x: "-37%",
         smooth: true,
-        ease: "power1.inOut"
-      }, "<")
-      .to(".second", {
-        x: "37%",
-        smooth: true,
-        ease: "power1.inOut"
-      }, "<")
-      .to(".third", {
-        x: "-37%",
-        smooth: true,
-        ease: "power1.inOut"
-      }, "<")
-      .to(".fourth", {
-        x: "37%",
-        smooth: true,
-        ease: "power1.inOut"
-      }, "<")
-      .to(".fifth", {
-        x: "-37%",
-        smooth: true,
-        ease: "power1.inOut"
-      }, "<")
-  })
-  
+        ease: "power1.inOut",
+      },
+      "<",
+    )
+      .to(
+        ".second",
+        {
+          x: "37%",
+          smooth: true,
+          ease: "power1.inOut",
+        },
+        "<",
+      )
+      .to(
+        ".third",
+        {
+          x: "-37%",
+          smooth: true,
+          ease: "power1.inOut",
+        },
+        "<",
+      )
+      .to(
+        ".fourth",
+        {
+          x: "37%",
+          smooth: true,
+          ease: "power1.inOut",
+        },
+        "<",
+      )
+      .to(
+        ".fifth",
+        {
+          x: "-37%",
+          smooth: true,
+          ease: "power1.inOut",
+        },
+        "<",
+      );
+  });
+
   return (
-    <div ref={containerRef} className="container overflow-y-auto overflow-x-hidden">
-      <div className="w-screen h-[50vh]"/>
+    <div
+      ref={containerRef}
+      className="container overflow-y-auto overflow-x-hidden"
+    >
+      <div className="w-screen h-[50vh]" />
       <div className="grid gap-y-6">
         <div className="flex gap-x-6 first flex-nowrap items-center">
           {Images.slice(0, 3).map((image, index) => (
-              <div key={index} className="flex-shrink-0 rounded-xl overflow-hidden">
-                  <Image src={image} height={300} width={600} />
-              </div>
+            <div
+              key={index}
+              className="flex-shrink-0 rounded-xl overflow-hidden"
+            >
+              <Image src={image} height={300} width={600} />
+            </div>
           ))}
         </div>
         <div className="gap-x-6 second flex-nowrap flex justify-end items-center">
           {Images.slice(4, 7).map((image, index) => (
-            <div key={index} className="flex-shrink-0 rounded-xl overflow-hidden">
-                  <Image src={image} height={300} width={600} />
-              </div>
+            <div
+              key={index}
+              className="flex-shrink-0 rounded-xl overflow-hidden"
+            >
+              <Image src={image} height={300} width={600} />
+            </div>
           ))}
         </div>
         <div className="flex gap-x-6 third flex-nowrap items-center">
           {Images.slice(8, 11).map((image, index) => (
-              <div key={index} className="flex-shrink-0 rounded-xl overflow-hidden">
-                  <Image src={image} height={300} width={600} />
-              </div>
+            <div
+              key={index}
+              className="flex-shrink-0 rounded-xl overflow-hidden"
+            >
+              <Image src={image} height={300} width={600} />
+            </div>
           ))}
         </div>
         <div className="gap-x-6 fourth flex-nowrap flex justify-end items-center">
           {Images.slice(12, 15).map((image, index) => (
-            <div key={index} className="flex-shrink-0 rounded-xl overflow-hidden">
-                  <Image src={image} height={300} width={600} />
-              </div>
+            <div
+              key={index}
+              className="flex-shrink-0 rounded-xl overflow-hidden"
+            >
+              <Image src={image} height={300} width={600} />
+            </div>
           ))}
         </div>
         <div className="flex gap-x-6 fifth flex-nowrap items-center">
           {Images.slice(16, 19).map((image, index) => (
-            <div key={index} className="flex-shrink-0 rounded-xl overflow-hidden">
-                  <Image src={image} height={300} width={600} />
-              </div>
+            <div
+              key={index}
+              className="flex-shrink-0 rounded-xl overflow-hidden"
+            >
+              <Image src={image} height={300} width={600} />
+            </div>
           ))}
         </div>
       </div>
-      <div className="w-screen h-[50vh]"/>
+      <div className="w-screen h-[50vh]" />
     </div>
   );
 };
