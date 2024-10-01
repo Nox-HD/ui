@@ -5,7 +5,6 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { motion } from "framer-motion";
 import { useState, useEffect } from 'react';
-import Frame from 'react-frame-component';
 
 const TemplateNoCentre = ( { heading, subtitle, element, tabcode, dependencies, csscode, jsxcode, jsxlocation, csslocation } ) => {
   const [copied1, setCopied1] = useState(false)

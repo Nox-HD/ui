@@ -5,9 +5,25 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from 'lenis'
+
 
 const ScrollablePhotoGallery = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  const lenis = new Lenis()
+
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+
+  lenis.on('scroll', ScrollTrigger.update)
+
+  gsap.ticker.add((time)=>{
+    lenis.raf(time * 1000)
+  })
+
+  gsap.ticker.lagSmoothing(0)
   
   const Images = [
     "/photogallery/image1.jpg",
@@ -43,58 +59,62 @@ const ScrollablePhotoGallery = () => {
       start: "top top",
       end: "bottom bottom",
       markers: true,
-      scrub: 5,
+      scrub: 1,
     }
   });
   useGSAP(() => {
     tl
       .to(".first", {
-        x: "-50%",
+        x: "-37%",
+        smooth: true,
         ease: "power1.inOut"
-      })
+      }, "<")
       .to(".second", {
-        x: "50%",
+        x: "37%",
+        smooth: true,
         ease: "power1.inOut"
-      })
+      }, "<")
       .to(".third", {
-        x: "-50%",
+        x: "-37%",
+        smooth: true,
         ease: "power1.inOut"
-      })
+      }, "<")
       .to(".fourth", {
-        x: "50%",
+        x: "37%",
+        smooth: true,
         ease: "power1.inOut"
-      })
+      }, "<")
   })
   
   return (
     <div ref={containerRef} className="container overflow-y-auto overflow-x-hidden">
       <div className="w-screen h-[50vh]"/>
       <div className="grid gap-y-6">
-        <div className="flex gap-x-6 first flex-nowrap translate-x-[400px] items-center">
-          {Images.slice(0, 4).map((image, index) => (
+        <div className="flex gap-x-6 first flex-nowrap items-center">
+          {Images.slice(0, 3).map((image, index) => (
               <div key={index} className="flex-shrink-0">
-                  <Image src={image} height={200} width={400} />
+                  <Image src={image} height={300} width={600} />
               </div>
           ))}
         </div>
-        <div className="flex gap-x-6  second flex-nowrap -translate-x-[400px] items-center">
-          {Images.slice(5, 9).map((image, index) => (
+        <div className="gap-x-6  second flex-nowrap flex justify-end items-center">
+          {Images.slice(4, 7).map((image, index) => (
             <div key={index} className="flex-shrink-0">
-                  <Image src={image} height={200} width={400} />
+                  <Image src={image} height={300} width={600} />
               </div>
           ))}
         </div>
-        <div className="flex gap-x-6  third flex-nowrap translate-x-[400px] items-center">
-          {Images.slice(10, 14).map((image, index) => (
+        <div className="flex gap-x-6  third flex-nowrap items-center">
+          {Images.slice(8, 11).map((image, index) => (
               <div key={index} className="flex-shrink-0">
-                  <Image src={image} height={200} width={400} />
+                  <Image src={image} height={300} width={600} />
               </div>
           ))}
         </div>
-        <div className="flex gap-x-6  fourth flex-nowrap -translate-x-[400px] items-center">
-          {Images.slice(15, 19).map((image, index) => (
+        <div className="gap-x-6  fourth flex-nowrap flex justify-end items-center">
+          {Images.slice(12, 15).map((image, index) => (
             <div key={index} className="flex-shrink-0">
-                  <Image src={image} height={200} width={400} />
+                  <Image src={image} height={300} width={600} />
               </div>
           ))}
         </div>
