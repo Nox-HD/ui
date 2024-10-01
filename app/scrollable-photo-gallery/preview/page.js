@@ -7,7 +7,6 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from 'lenis'
 
-
 const ScrollablePhotoGallery = () => {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
