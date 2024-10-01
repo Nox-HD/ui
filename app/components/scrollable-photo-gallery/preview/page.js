@@ -26,7 +26,6 @@ const ScrollablePhotoGallery = () => {
   gsap.ticker.lagSmoothing(0)
   
   const Images = [
-    "/photogallery/image1.jpg",
     "/photogallery/image2.jpg",
     "/photogallery/image3.jpg",
     "/photogallery/image4.jpg",
@@ -84,6 +83,11 @@ const ScrollablePhotoGallery = () => {
         smooth: true,
         ease: "power1.inOut"
       }, "<")
+      .to(".fifth", {
+        x: "-37%",
+        smooth: true,
+        ease: "power1.inOut"
+      }, "<")
   })
   
   return (
@@ -97,22 +101,29 @@ const ScrollablePhotoGallery = () => {
               </div>
           ))}
         </div>
-        <div className="gap-x-6  second flex-nowrap flex justify-end items-center">
+        <div className="gap-x-6 second flex-nowrap flex justify-end items-center">
           {Images.slice(4, 7).map((image, index) => (
             <div key={index} className="flex-shrink-0">
                   <Image src={image} height={300} width={600} />
               </div>
           ))}
         </div>
-        <div className="flex gap-x-6  third flex-nowrap items-center">
+        <div className="flex gap-x-6 third flex-nowrap items-center">
           {Images.slice(8, 11).map((image, index) => (
               <div key={index} className="flex-shrink-0">
                   <Image src={image} height={300} width={600} />
               </div>
           ))}
         </div>
-        <div className="gap-x-6  fourth flex-nowrap flex justify-end items-center">
+        <div className="gap-x-6 fourth flex-nowrap flex justify-end items-center">
           {Images.slice(12, 15).map((image, index) => (
+            <div key={index} className="flex-shrink-0">
+                  <Image src={image} height={300} width={600} />
+              </div>
+          ))}
+        </div>
+        <div className="flex gap-x-6 fifth flex-nowrap items-center">
+          {Images.slice(16, 19).map((image, index) => (
             <div key={index} className="flex-shrink-0">
                   <Image src={image} height={300} width={600} />
               </div>
