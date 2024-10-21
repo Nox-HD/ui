@@ -12,9 +12,9 @@ const poppinsFont = {
 
 const springTransition = {
   type: "spring",
-  stiffness: 100,
-  damping: 10,
-  mass: 0.5,
+  stiffness: 150,
+  damping: 15,
+  mass: 0.75,
 };
 
 export default function Menu({ menuItems }) {
