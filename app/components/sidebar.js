@@ -1,46 +1,54 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 const Sidebar = () => {
   const sections = [
     {
-      title: 'Getting Started',
+      title: "Getting Started",
+      links: [{ href: "/components/introduction", label: "Introduction" }],
+    },
+    {
+      title: "Installation",
       links: [
-        { href: '/components/introduction', label: 'Introduction' },
+        { href: "/components/install-nextjs", label: "Install Next.js" },
+        { href: "/components/install-tailwind", label: "Install Tailwind CSS" },
       ],
     },
     {
-      title: 'Installation',
+      title: "All Components",
       links: [
-        { href: '/components/install-nextjs', label: 'Install Next.js' },
-        { href: '/components/install-tailwind', label: 'Install Tailwind CSS' },
-      ],
-    },
-    {
-      title: 'All Components',
-      links: [
-        { href: '/components/animated-grid-bg', label: 'Animated Grid Background' },
-        { href: '/components/animated-card', label: 'Animated Card' },
-        { href: '/components/magnetic-icons', label: 'Magnetic Icons' },
-        { href: '/components/awards-carousel', label: 'Awards Carousel' },
-        { href: '/components/magical-bento-grid', label: 'Magical Bento Grid' },
-        { href: '/components/simple-bento-grid', label: 'Simple Bento Grid' },
-        { href: '/components/infinite-tunnel', label: 'Infinite Tunnel' },
-        { href: '/components/macos-dock', label: 'macOS Dock' },
-        { href: '/components/team-carousel', label: 'Team Carousel' },
-        { href: '/components/modern-sidebar', label: 'Modern Sidebar' },
-        { href: '/components/image-carousel', label: 'Image Carousel' },
-        { href: '/components/swipe-cards', label: 'Swipe Cards' },
-        { href: '/components/image-zoom', label: 'Image Zoom' }, 
-        { href: '/components/glitch-image', label: 'Glitch Image' }, 
-        { href: '/components/scrollable-photo-gallery', label: 'Scrollable Photo Gallery' }, 
+        {
+          href: "/components/animated-grid-bg",
+          label: "Animated Grid Background",
+        },
+        { href: "/components/animated-card", label: "Animated Card" },
+        { href: "/components/magnetic-icons", label: "Magnetic Icons" },
+        { href: "/components/awards-carousel", label: "Awards Carousel" },
+        { href: "/components/magical-bento-grid", label: "Magical Bento Grid" },
+        { href: "/components/simple-bento-grid", label: "Simple Bento Grid" },
+        { href: "/components/infinite-tunnel", label: "Infinite Tunnel" },
+        { href: "/components/macos-dock", label: "macOS Dock" },
+        { href: "/components/team-carousel", label: "Team Carousel" },
+        { href: "/components/modern-sidebar", label: "Modern Sidebar" },
+        { href: "/components/image-carousel", label: "Image Carousel" },
+        { href: "/components/swipe-cards", label: "Swipe Cards" },
+        { href: "/components/image-zoom", label: "Image Zoom" },
+        { href: "/components/glitch-image", label: "Glitch Image" },
+        {
+          href: "/components/scrollable-photo-gallery",
+          label: "Scrollable Photo Gallery",
+        },
+        {
+          href: "/components/retro-navigation",
+          label: "Retro Navigation",
+        },
       ].sort((a, b) => a.label.localeCompare(b.label)),
     },
     {
-      title: 'Text Effects',
+      title: "Text Effects",
       links: [
-        { href: '/components/staggered-text', label: 'Staggered Text' },
-        { href: '/components/encrypted-text', label: 'Encrypted Text' },
+        { href: "/components/staggered-text", label: "Staggered Text" },
+        { href: "/components/encrypted-text", label: "Encrypted Text" },
       ],
     },
   ];
