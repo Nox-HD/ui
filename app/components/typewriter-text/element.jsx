@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const TypingEffect = () => {
-  const text = "Lorem ipsum dolor sit amet consectetur, adipisicin.";
+const TypingEffect = ({ text }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
 
@@ -24,14 +23,14 @@ const TypingEffect = () => {
 
   return (
     <div className="flex items-center justify-center h-full text-white">
-      <div className="relative text-center">
+      <div className="relative flex w-full items-center justify-center text-center h-full">
         <button
           onClick={restartTyping}
-          className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-4xl text-gray-400 hover:text-gray-300 focus:outline-none"
+          className="absolute top-10 right-10 transform text-4xl text-gray-400 hover:text-gray-300 focus:outline-none"
         >
           &#8635;
         </button>
-        <div className="text-4xl font-mono">{displayedText}</div>
+        <div className="text-5xl font-mono">{displayedText}</div>
       </div>
     </div>
   );
