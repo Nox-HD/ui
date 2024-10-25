@@ -49,6 +49,7 @@ const Sidebar = () => {
       links: [
         { href: "/components/staggered-text", label: "Staggered Text" },
         { href: "/components/encrypted-text", label: "Encrypted Text" },
+        { href: "/components/mysterious-text", label: "Mysterious Text" },
         { href: "/components/typewriter-text", label: "Typewriter Text" },
       ],
     },
