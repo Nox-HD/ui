@@ -60,11 +60,14 @@ const Header = () => {
         </Link>
       </div>
       <div>
-        <Link href="/" className="flex content-center items-center mx-10">
+        <Link
+          href="/mobile-sidebar"
+          className="flex h-full items-center justify-end pr-14"
+        >
           <Image
             className="invert"
             src="/menu.svg"
-            width={40}
+            width={30}
             height={0}
           ></Image>
         </Link>
