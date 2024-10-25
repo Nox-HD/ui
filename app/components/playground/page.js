@@ -1,118 +1,60 @@
-'use client'
-import React, { useEffect, useRef } from 'react';
-import { twMerge } from 'tailwind-merge';
+"use client";
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import SplitType from "split-type";
 
-const GlitchCanvas = ({ maxWidth = 800, maxHeight = 600 }) => {
-  const canvasRef = useRef(null);
-
+const NebulaHeading = () => {
   useEffect(() => {
-    let w, h, offset;
-    const canvas = canvasRef.current;
-    const context = canvas.getContext('2d');
-    const img = new Image();
-    let glitchInterval;
+    const heading = document.querySelector(".heading");
+    const headingSplitText = new SplitType(heading, { type: "chars" });
+    const headingChars = headingSplitText.chars;
 
-    const randInt = (a, b) => Math.floor(Math.random() * (b - a) + a);
+    gsap.from(headingChars, {
+      filter: "blur(0.15em)",
+      stagger: {
+        from: "left",
+        each: 0.1,
+      },
+      duration: (i) => 1.25 + i * 0.75,
+      ease: "power2.inOut",
+    });
 
-    const clear = () => {
-      context.clearRect(0, 0, w, h);
-    };
-
-    const glitchImg = () => {
-      for (let i = 0; i < randInt(1, 13); i++) {
-        const x = Math.random() * w;
-        const y = Math.random() * h;
-        const spliceWidth = w - x;
-        const spliceHeight = randInt(5, h / 3);
-        context.drawImage(
-          canvas,
-          0,
-          y,
-          spliceWidth,
-          spliceHeight,
-          x,
-          y,
-          spliceWidth,
-          spliceHeight
-        );
-        context.drawImage(
-          canvas,
-          spliceWidth,
-          y,
-          x,
-          spliceHeight,
-          0,
-          y,
-          x,
-          spliceHeight
-        );
-      }
-    };
-
-    const init = () => {
-      clearInterval(glitchInterval);
-
-      // Get available width and height
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
-
-      // Set canvas dimensions based on maxWidth and maxHeight
-      w = Math.min(windowWidth, maxWidth);
-      h = Math.min(windowHeight, maxHeight);
-
-      // Adjust width and height to maintain the image's aspect ratio
-      const imgAspectRatio = img.width / img.height;
-      const canvasAspectRatio = w / h;
-
-      if (canvasAspectRatio > imgAspectRatio) {
-        // Canvas is wider than image, adjust width
-        w = h * imgAspectRatio;
-      } else {
-        // Canvas is taller than image, adjust height
-        h = w / imgAspectRatio;
-      }
-
-      canvas.width = w;
-      canvas.height = h;
-
-      offset = w * 0.1;
-
-      glitchInterval = setInterval(() => {
-        clear();
-        context.drawImage(
-          img,
-          0,
-          0,
-          img.width,
-          img.height,
-          offset,
-          0,
-          w - offset * 2,
-          h
-        );
-        setTimeout(glitchImg, randInt(250, 1000));
-      }, 500);
-    };
-
-    img.onload = () => {
-      init();
-      window.addEventListener('resize', init);
-    };
-
-    img.src =
-      '/2.svg';
-
-    return () => {
-      clearInterval(glitchInterval);
-      window.removeEventListener('resize', init);
-    };
-  }, [maxWidth, maxHeight]);
+    gsap.from(
+      headingChars,
+      {
+        xPercent: (i) => (i + 1) * 20,
+        opacity: 0,
+        stagger: {
+          from: "left",
+          each: 0.1,
+        },
+        duration: (i) => 1 + i * 0.85,
+        ease: "power2.out",
+      },
+      "<"
+    );
+  }, []);
 
   return (
-    <div className="bg-black">
-      <canvas ref={canvasRef} className={twMerge('m-5 mx-auto block')}></canvas>
+    <div className="flex items-center justify-center h-screen bg-black">
+      <h1
+        className="heading font-bold text-white text-center uppercase pt-2"
+        style={{ fontSize: "clamp(5rem, 16vw, 16.5rem)" }}
+      >
+        NoxHD
+      </h1>
+
+      <style jsx>{`
+        .heading {
+          transform-origin: 50% 50%;
+        }
+        .heading > div {
+          transform-origin: 50% 100%;
+          overflow: hidden;
+        }
+      `}</style>
     </div>
   );
 };
 
-export default GlitchCanvas;
+export default NebulaHeading;
