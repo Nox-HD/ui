@@ -55,7 +55,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="h-full p-10">
+    <div className="max-h-lvh p-10">
       {sections.map((section, index) => (
         <div key={index} className="mb-6">
           <div className="pb-2 font-bold text-xl">{section.title}</div>
