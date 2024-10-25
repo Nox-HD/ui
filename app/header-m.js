@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
   const sections = [
     {
       title: "Getting Started",
@@ -64,6 +64,7 @@ const Sidebar = () => {
               <Link
                 key={linkIndex}
                 href={link.href}
+                onClick={onClose}
                 className="mb-2 text-neutral-400 text-md hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3"
               >
                 {link.label}
@@ -90,6 +91,8 @@ const HeaderM = () => {
     };
   }, [toggle]);
 
+  const closeSidebar = () => setToggle(false); // Close sidebar function
+
   return (
     <main className="relative visible md:invisible">
       <div className="header min-h-20 md:min-h-14 bg-black/50 backdrop-blur-3xl grid grid-cols-2 md:grid-cols-6 fixed z-20">
@@ -107,7 +110,7 @@ const HeaderM = () => {
       </div>
       {toggle && (
         <div className="fixed top-[4.8rem] inset-0 z-50 bg-black overflow-y-auto text-white">
-          <Sidebar />
+          <Sidebar onClose={closeSidebar} />
         </div>
       )}
     </main>
