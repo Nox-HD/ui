@@ -55,7 +55,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="max-h-lvh p-10">
+    <div className="min-h-lvh p-10">
       {sections.map((section, index) => (
         <div key={index} className="mb-6">
           <div className="pb-2 font-bold text-xl">{section.title}</div>
@@ -106,7 +106,7 @@ const HeaderM = () => {
         </div>
       </div>
       {toggle && (
-        <div className="fixed top-[4.8rem] inset-0 z-50 mb-10 bg-black overflow-y-auto text-white">
+        <div className="fixed top-[4.8rem] inset-0 z-50 bg-black overflow-y-auto text-white">
           <Sidebar />
         </div>
       )}
