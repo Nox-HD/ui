@@ -30,7 +30,7 @@ export default function Hero() {
               Accessible, customizable, and open-source.
             </p>
           </div>
-          <div className="z-50 flex">
+          <div className="z-30 flex">
             <Link href="/components/animated-card/">
               <Button className="mx-3">Browse Components</Button>
             </Link>

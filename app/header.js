@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="min-w-full min-h-20 md:min-h-14 bg-black/50 backdrop-blur-3xl grid grid-cols-2 md:grid-cols-6 fixed z-50">
+    <div className="min-w-full min-h-20 md:min-h-14 bg-black/50 backdrop-blur-3xl invisible md:visible grid grid-cols-2 md:grid-cols-6 fixed z-50">
       <div className="flex content-center items-center">
         <Link href="/" className="flex content-center items-center mx-10">
           <Image className="invert" src="/1.svg" width={150} height={0}></Image>
         </Link>
       </div>
-      <div className="md:col-span-3 flex content-center items-center space-x-5 text-sm invisible md:visible absolute md:relative">
+      <div className="md:col-span-3 flex content-center items-center space-x-5 text-sm absolute md:relative">
         <Link
           className="text-neutral-400 transition-colors duration-150 hover:text-white"
           href="/components/introduction"
@@ -57,19 +57,6 @@ const Header = () => {
               <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"></path>
             </svg>
           </button>
-        </Link>
-      </div>
-      <div>
-        <Link
-          href="/mobile-sidebar"
-          className="flex h-full items-center justify-end pr-14"
-        >
-          <Image
-            className="invert"
-            src="/menu.svg"
-            width={30}
-            height={0}
-          ></Image>
         </Link>
       </div>
     </div>
