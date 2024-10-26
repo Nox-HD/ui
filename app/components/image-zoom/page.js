@@ -51,7 +51,10 @@ const TemplateNoCentre = ({
             <TabsTrigger value="preview">Preview</TabsTrigger>
             <TabsTrigger value="code">Usage</TabsTrigger>
           </TabsList>
-          <TabsContent className="flex previews m-auto overflow-hidden" value="preview">
+          <TabsContent
+            className="flex previews m-auto overflow-hidden"
+            value="preview"
+          >
             <motion.div
               initial={{ y: 15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -60,7 +63,7 @@ const TemplateNoCentre = ({
             >
               <div className="previews lg:h-[100vh]">
                 <ParallaxSection
-                className="previews"
+                  className="previews"
                   outsideImage={"/images/outside.png"}
                   insideImage={
                     "url(https://images.unsplash.com/photo-1589848315097-ba7b903cc1cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"
@@ -131,7 +134,7 @@ export default App`}
           <button
             className="p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm"
             onClick={async () => {
-              navigator.clipboard.writeText(jsxcode),
+              navigator.clipboard.writeText("npm i gsap"),
                 setCopied1(true),
                 setTimeout(() => {
                   setCopied1(false);
@@ -279,7 +282,89 @@ export default ImageZoom;
               <button
                 className="p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm"
                 onClick={async () => {
-                  navigator.clipboard.writeText(jsxcode),
+                  navigator.clipboard.writeText(`"use client";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ImageZoom = ({ outsideImage, insideImage }) => {
+  const containerRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const imageRef = useRef(null);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const wrapper = wrapperRef.current;
+    const image = imageRef.current;
+    const hero = heroRef.current;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: wrapper,
+        start: "top top",
+        end: "+=150%",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+        scroller: container,
+      },
+    });
+
+    tl.to(
+      image,
+      {
+        scale: 2,
+        y: "20%",
+        transformOrigin: "center center",
+        ease: "power1.inOut",
+      },
+      0,
+    ).to(
+      hero,
+      {
+        scale: 1.2,
+        transformOrigin: "center center",
+        ease: "power1.inOut",
+      },
+      0,
+    );
+
+    return () => {
+      tl.kill();
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef}
+      className="h-[100vw] md:h-[100vh] overflow-y-auto overflow-x-hidden previews aspect-square md:aspect-auto"
+    >
+      <div ref={wrapperRef} className="relative w-full h-full z-10">
+        <div className="relative w-full h-full overflow-hidden">
+          <section
+            ref={heroRef}
+            className="w-full h-full bg-center bg-no-repeat bg-cover"
+            style={{ backgroundImage: \`\${insideImage}\` }}
+          ></section>
+        </div>
+        <div className="absolute top-0 left-0 right-0 w-full h-full z-20 overflow-hidden">
+          <img
+            ref={imageRef}
+            src={outsideImage}
+            alt="Parallax Image"
+            className="w-full h-full object-cover object-center"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ImageZoom;
+`),
                     setCopied3(true),
                     setTimeout(() => {
                       setCopied3(false);
