@@ -2,8 +2,11 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Sidebar = ({ onClose }) => {
+  const pathname = usePathname();
+
   const sections = [
     {
       title: "Getting Started",
@@ -65,7 +68,15 @@ const Sidebar = ({ onClose }) => {
                 key={linkIndex}
                 href={link.href}
                 onClick={onClose}
-                className="mb-2 text-neutral-400 text-md hover:text-[#365377] transition-transform duration-300 ease-in-out hover:translate-x-3"
+                className={`
+                    relative mb-2 text-sm transition-all duration-300 ease-in-out
+                    hover:text-[#365377] hover:translate-x-3
+                    ${
+                      pathname === link.href + "/"
+                        ? "text-[#365377] translate-x-3 before:absolute before:-left-4 before:top-0 before:h-full before:w-1 before:bg-[#365377] before:rounded-r-lg"
+                        : "text-neutral-400"
+                    }
+                  `}
               >
                 {link.label}
               </Link>
