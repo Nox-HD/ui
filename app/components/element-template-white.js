@@ -199,7 +199,7 @@ const TemplateWhite = ({
               <button
                 className="p-2 absolute right-3 top-3 hover:bg-[#3f3f46] transition-colors duration-200 rounded-sm"
                 onClick={async () => {
-                  navigator.clipboard.writeText(Csscodes),
+                  navigator.clipboard.writeText(csscode),
                     setCopied2(true),
                     setTimeout(() => {
                       setCopied2(false);
