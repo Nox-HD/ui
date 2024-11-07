@@ -1,39 +1,75 @@
 "use client";
 import Link from "next/link";
-import React from "react";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
+
+const Links = ({ children, setAttributes }) => {
+  const ref = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (ref.current) {
+      const { width, left } = ref.current.getBoundingClientRect();
+      const parentLeft = ref.current.parentNode.getBoundingClientRect().left;
+      setAttributes({
+        width: width + 40, // Adjust for padding on both sides
+        left: left - parentLeft - 20, // Center the blob under the item
+        opacity: 1, // Make the blob visible on hover
+      });
+    }
+  };
+
+  return (
+    <li ref={ref} onMouseEnter={handleMouseEnter} className="relative">
+      {children}
+    </li>
+  );
+};
 
 const AnimatedNavBar = () => {
   const [attributes, setAttributes] = useState({
-    left: 100,
-    width: 100,
-    opacity: 1,
+    left: 0,
+    width: 0,
+    opacity: 0, // Initially hidden
   });
 
+  const handleMouseLeave = () => {
+    setAttributes((prevAttributes) => ({
+      ...prevAttributes,
+      opacity: 0, // Hide the blob when mouse leaves the navbar
+    }));
+  };
+
   return (
-    <div>
-      <div className="bg-white flex relative items-center w-max h-10 rounded-full border border-white border-5 ">
-        <ul className="flex flex-row z-10 gap-x-10 px-8 mix-blend-difference">
-          <Link href="#">
-            <li>Home</li>
-          </Link>
-          <Link href="#">
-            <li>Contact Us</li>
-          </Link>
-          <Link href="#">
-            <li>Portfolio</li>
-          </Link>
-          <Link href="#">
-            <li>About Us</li>
-          </Link>
-          <Link href="#">
-            <li>FAQs</li>
-          </Link>
+    <div className="relative">
+      <div className="bg-white flex relative items-center w-max h-10 rounded-full border border-white">
+        <ul
+          className="flex flex-row z-10 gap-x-10 mix-blend-difference relative px-6"
+          onMouseLeave={handleMouseLeave} // Only hide blob when leaving the whole navbar
+        >
+          <Links setAttributes={setAttributes}>
+            <Link href="#">Home</Link>
+          </Links>
+          <Links setAttributes={setAttributes}>
+            <Link href="#">About Us</Link>
+          </Links>
+          <Links setAttributes={setAttributes}>
+            <Link href="#">Portfolio</Link>
+          </Links>
+          <Links setAttributes={setAttributes}>
+            <Link href="#">Contact Us</Link>
+          </Links>
+          <Links setAttributes={setAttributes}>
+            <Link href="#">FAQs</Link>
+          </Links>
         </ul>
         <motion.div
-          className="bg-black top-1/2 z-0 -translate-y-1/2 left-[0.1rem] absolute h-9 rounded-full"
-          animate={attributes}
+          className="bg-black top-1/2 z-0 -translate-y-1/2 absolute h-9 rounded-full"
+          animate={{
+            width: attributes.width,
+            left: attributes.left,
+            opacity: attributes.opacity,
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
         />
       </div>
     </div>
