@@ -4,8 +4,8 @@ import React from "react";
 const AnimatedNavBar = () => {
   return (
     <div>
-      <div className="bg-white text-black flex justify-center items-center w-max h-10 rounded-full border border-5">
-        <ul className="flex flex-row gap-x-8 px-8">
+      <div className="bg-white flex relative items-center w-max h-10 rounded-full border border-white border-5 ">
+        <ul className="flex flex-row z-10 gap-x-10 px-8 mix-blend-difference">
           <Link href="#">
             <li>Home</li>
           </Link>
@@ -22,6 +22,7 @@ const AnimatedNavBar = () => {
             <li>FAQs</li>
           </Link>
         </ul>
+        <div className="bg-black top-1/2 z-0 -translate-y-1/2 left-[0.1rem] absolute w-24 h-9 rounded-full" />
       </div>
     </div>
   );
