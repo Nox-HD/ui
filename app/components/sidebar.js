@@ -38,6 +38,7 @@ const Sidebar = () => {
         { href: "/components/swipe-cards", label: "Swipe Cards" },
         { href: "/components/image-zoom", label: "Image Zoom" },
         { href: "/components/glitch-image", label: "Glitch Image" },
+        { href: "/components/animated-nav-bar", label: "Animated Navbar" },
         {
           href: "/components/scrollable-photo-gallery",
           label: "Scrollable Photo Gallery",

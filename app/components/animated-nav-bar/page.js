@@ -1,13 +1,14 @@
 import React from "react";
-import TemplateNoCentre from "../element-template-nocentre";
+import AnimatedNavBar from "./element";
+import Template from "../element-template";
 
 const AwardsCarousel = () => {
   return (
     <div>
-      <TemplateNoCentre
+      <Template
         heading={""}
         subtitle={""}
-        element={""}
+        element={<AnimatedNavBar />}
         tabcode={``}
         dependencies={""}
         csscode={""}
