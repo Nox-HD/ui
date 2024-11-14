@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-const Links = ({ children, setAttributes }) => {
+const Links = ({ link, setAttributes }) => {
   const ref = useRef(null);
 
   const handleMouseEnter = () => {
@@ -20,12 +20,12 @@ const Links = ({ children, setAttributes }) => {
 
   return (
     <li ref={ref} onMouseEnter={handleMouseEnter} className="relative">
-      {children}
+      <Link href={link.href}>{link.label}</Link>
     </li>
   );
 };
 
-const AnimatedNavBar = () => {
+const AnimatedNavBar = ({ links }) => {
   const [attributes, setAttributes] = useState({
     left: 0,
     width: 0,
@@ -46,21 +46,9 @@ const AnimatedNavBar = () => {
           className="flex flex-row z-10 gap-x-10 mix-blend-difference relative px-6"
           onMouseLeave={handleMouseLeave} // Only hide blob when leaving the whole navbar
         >
-          <Links setAttributes={setAttributes}>
-            <Link href="#">Home</Link>
-          </Links>
-          <Links setAttributes={setAttributes}>
-            <Link href="#">About Us</Link>
-          </Links>
-          <Links setAttributes={setAttributes}>
-            <Link href="#">Portfolio</Link>
-          </Links>
-          <Links setAttributes={setAttributes}>
-            <Link href="#">Contact Us</Link>
-          </Links>
-          <Links setAttributes={setAttributes}>
-            <Link href="#">FAQs</Link>
-          </Links>
+          {links.map((link, index) => (
+            <Links key={index} link={link} setAttributes={setAttributes} />
+          ))}
         </ul>
         <motion.div
           className="bg-black top-1/2 z-0 -translate-y-1/2 absolute h-9 rounded-full"
