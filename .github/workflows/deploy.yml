@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT }}  # Optional, use if a non-default port
           local-dir: ./out/  # Ensure this ends with a slash
-          server-dir: /  # Ensure this ends with a slash
+          server-dir: /ui/  # Ensure this ends with a slash
           exclude: |
             **/.git*
             **/.DS_Store
