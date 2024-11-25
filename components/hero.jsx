@@ -49,31 +49,36 @@ export default function Hero() {
               src="react-2.svg"
               width={35}
               height={35}
-            ></Image>
+              alt="React logo"
+            />
             <Image
               className="grayscale"
               src="next.svg"
               width={100}
               height={50}
-            ></Image>
+              alt="Next.js logo"
+            />
             <Image
               className="grayscale"
               src="framer-motion.svg"
               width={34}
               height={35}
-            ></Image>
+              alt="Framer Motion logo"
+            />
             <Image
               className="grayscale"
               src="gsap-greensock.svg"
               width={33}
               height={33}
-            ></Image>
+              alt="GSAP Greensock logo"
+            />
             <Image
               className="grayscale"
               src="logo-javascript.svg"
               width={33}
               height={33}
-            ></Image>
+              alt="JavaScript logo"
+            />
           </div>
         </div>
       </div>

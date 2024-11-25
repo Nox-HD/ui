@@ -9,7 +9,7 @@ export default function Footerfull() {
       <div className="container grid grid-cols-1 gap-8 max-w-7xl sm:grid-cols-2 md:grid-cols-3">
         <div className="flex flex-col items-start gap-4">
           <Link href="#" className="flex items-center gap-2" prefetch={false}>
-            <Image src="2.svg" width={150} height={75} />
+            <Image src="2.svg" width={150} height={75} alt="logo"/>
           </Link>
           <p className="text-muted-foreground">A Open-Source Commitment<br/> by NoxHD.</p>
           <div className="flex gap-4">
