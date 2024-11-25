@@ -14,7 +14,7 @@ const AwardsCarousel = () => {
     <div>
         <TemplateX heading={"Magnetic Navbar"} 
                   subtitle={""} 
-                  element={<AnimatedNavBar links={navLinks}/>} 
+                  element={<AnimatedNavBar links={navLinks} />} 
                   tabcode={``} 
                   dependencies={""} 
                   csscode={""} 
