@@ -20,7 +20,7 @@ const Header = () => {
         </Link>
         <Link
           className="text-neutral-400 transition-colors duration-150 hover:text-white"
-          href="/components"
+          href="/components/animated-card/"
         >
           {" "}
           Components{" "}
